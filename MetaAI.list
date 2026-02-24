@@ -3,21 +3,21 @@ DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,metaai.com  
 DOMAIN-KEYWORD,metaai
 
-  # WhatsApp 专项
+# WhatsApp 专项
 DOMAIN-SUFFIX,whatsapp.com
 DOMAIN-SUFFIX,whatsapp.net
 DOMAIN-KEYWORD,whatsapp
 
-  # Messenger 专项
+# Messenger 专项
 DOMAIN-SUFFIX,messenger.com
 DOMAIN-SUFFIX,m.me
 
-  # 媒体上传与视觉识别 (Look and Tell Me)
+# 媒体上传与视觉识别 (Look and Tell Me)
 DOMAIN-SUFFIX,fbcdn.net
 DOMAIN-SUFFIX,fbsbx.com
 DOMAIN-SUFFIX,cdninstagram.com
 
-  # 账户认证与硬件检测
+# 账户认证与硬件检测
 DOMAIN-SUFFIX,atmeta.com
 DOMAIN-SUFFIX,facebook.com
 DOMAIN-SUFFIX,facebook.net
