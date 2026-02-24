@@ -1,42 +1,42 @@
 # === 1. 核心 AI 逻辑与多模态 (AI & Vision) ===
-- DOMAIN-SUFFIX,meta.ai             # Meta AI 主域名
-- DOMAIN-SUFFIX,metaai.com           # AI 辅助域名
-- DOMAIN-KEYWORD,metaai              # 捕获所有带 metaai 的子域
-- DOMAIN-KEYWORD,ar-genai            # 核心：视觉生成与识别 API
-- DOMAIN-KEYWORD,genai               # 核心：生成式 AI 后端
-- DOMAIN-SUFFIX,wit.ai               # 核心：语音指令解析 (STT/NLP)
-- DOMAIN-SUFFIX,metademolab.com      # 视觉识别实验室功能
+DOMAIN-SUFFIX,meta.ai             # Meta AI 主域名
+DOMAIN-SUFFIX,metaai.com           # AI 辅助域名
+DOMAIN-KEYWORD,metaai              # 捕获所有带 metaai 的子域
+DOMAIN-KEYWORD,ar-genai            # 核心：视觉生成与识别 API
+DOMAIN-KEYWORD,genai               # 核心：生成式 AI 后端
+DOMAIN-SUFFIX,wit.ai               # 核心：语音指令解析 (STT/NLP)
+DOMAIN-SUFFIX,metademolab.com      # 视觉识别实验室功能
 # === 2. Meta 基础架构与门户 (Infrastructure) ===
-- DOMAIN-SUFFIX,meta.com             # 必备：Meta 官网及资源分发
-- DOMAIN-SUFFIX,atmeta.com           # 必备：硬件设备专属域名
-- DOMAIN-SUFFIX,fb.com               # 核心 API 短域名
-- DOMAIN-SUFFIX,fb.me                # 短链接分发
-- DOMAIN-SUFFIX,facebook.com         # 核心认证与地理位置校验
-- DOMAIN-SUFFIX,facebook.net         # 核心脚本与服务
-- DOMAIN-SUFFIX,facebook.org         # 基础证书与公共服务
-- DOMAIN-SUFFIX,tfbnw.net            # 关键：Meta 骨干网流量
-- DOMAIN-SUFFIX,fb-messenger.com     # 底层通信协议
+DOMAIN-SUFFIX,meta.com             # 必备：Meta 官网及资源分发
+DOMAIN-SUFFIX,atmeta.com           # 必备：硬件设备专属域名
+DOMAIN-SUFFIX,fb.com               # 核心 API 短域名
+DOMAIN-SUFFIX,fb.me                # 短链接分发
+DOMAIN-SUFFIX,facebook.com         # 核心认证与地理位置校验
+DOMAIN-SUFFIX,facebook.net         # 核心脚本与服务
+DOMAIN-SUFFIX,facebook.org         # 基础证书与公共服务
+DOMAIN-SUFFIX,tfbnw.net            # 关键：Meta 骨干网流量
+DOMAIN-SUFFIX,fb-messenger.com     # 底层通信协议
 # === 3. 实时通信与同步 (WhatsApp & Messenger) ===
-- DOMAIN-SUFFIX,whatsapp.com         # WhatsApp 核心
-- DOMAIN-SUFFIX,whatsapp.net         # WhatsApp 数据流
-- DOMAIN-KEYWORD,whatsapp            # 捕获所有 WhatsApp 变体
-- DOMAIN-SUFFIX,messenger.com        # Messenger 核心
-- DOMAIN-SUFFIX,m.me                 # Messenger 短链接
-- DOMAIN-KEYWORD,edge-mqtt           # 关键：实时长连接（眼镜状态同步）
+DOMAIN-SUFFIX,whatsapp.com         # WhatsApp 核心
+DOMAIN-SUFFIX,whatsapp.net         # WhatsApp 数据流
+DOMAIN-KEYWORD,whatsapp            # 捕获所有 WhatsApp 变体
+DOMAIN-SUFFIX,messenger.com        # Messenger 核心
+DOMAIN-SUFFIX,m.me                 # Messenger 短链接
+DOMAIN-KEYWORD,edge-mqtt           # 关键：实时长连接（眼镜状态同步）
 # === 4. 媒体分发与 CDN (Image/Video Upload) ===
 # 用于 "Look and tell me" 拍摄照片的即时上传
-- DOMAIN-SUFFIX,fbcdn.net            # 最重要的媒体 CDN
-- DOMAIN-SUFFIX,fbsbx.com            # 静态资源与附件
-- DOMAIN-KEYWORD,fna.fbcdn.net       # 边缘加速节点
-- DOMAIN-SUFFIX,akamaihd.net         # 辅助 CDN（部分视觉权重文件）
-- DOMAIN-SUFFIX,cdninstagram.com     # Instagram 媒体资源
+DOMAIN-SUFFIX,fbcdn.net            # 最重要的媒体 CDN
+DOMAIN-SUFFIX,fbsbx.com            # 静态资源与附件
+DOMAIN-KEYWORD,fna.fbcdn.net       # 边缘加速节点
+DOMAIN-SUFFIX,akamaihd.net         # 辅助 CDN（部分视觉权重文件）
+DOMAIN-SUFFIX,cdninstagram.com     # Instagram 媒体资源
 # === 5. 账号、硬件与定位 (Auth & Location) ===
-- DOMAIN-SUFFIX,instagram.com        # 关联账号服务
-- DOMAIN-SUFFIX,oculus.com           # 硬件底层框架
-- DOMAIN-SUFFIX,oculuscdn.com        # 硬件固件更新
-- DOMAIN-SUFFIX,mapillary.com        # AI 地图与位置环境识别
-- DOMAIN-SUFFIX,intern.facebook.com  # 内部配置分发
+DOMAIN-SUFFIX,instagram.com        # 关联账号服务
+DOMAIN-SUFFIX,oculus.com           # 硬件底层框架
+DOMAIN-SUFFIX,oculuscdn.com        # 硬件固件更新
+DOMAIN-SUFFIX,mapillary.com        # AI 地图与位置环境识别
+DOMAIN-SUFFIX,intern.facebook.com  # 内部配置分发
 # === 6. 边缘链路与证书 (Edge & SSL) ===
-- DOMAIN-SUFFIX,facebook.com.edgekey.net
-- DOMAIN-SUFFIX,fbworkmail.com
-- DOMAIN-SUFFIX,facebook-internal.com
+DOMAIN-SUFFIX,facebook.com.edgekey.net
+DOMAIN-SUFFIX,fbworkmail.com
+DOMAIN-SUFFIX,facebook-internal.com
