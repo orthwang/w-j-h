@@ -1,6 +1,10 @@
-payload:
-  - DOMAIN-SUFFIX,meta.ai
-  - DOMAIN-SUFFIX,facebook.com
-  - DOMAIN-SUFFIX,fbcdn.net
-  - DOMAIN-SUFFIX,instagram.com
-  - DOMAIN-KEYWORD,metaai
+# Meta AI 专项分流
+  - DOMAIN-SUFFIX,meta.ai,Proxy
+  - DOMAIN-SUFFIX,atmeta.com,Proxy
+  - DOMAIN-SUFFIX,fbcdn.net,Proxy
+  - DOMAIN-SUFFIX,facebook.com,Proxy
+  - DOMAIN-SUFFIX,facebook.net,Proxy
+  - DOMAIN-SUFFIX,fbsbx.com,Proxy
+  - DOMAIN-SUFFIX,oculus.com,Proxy
+  - DOMAIN-SUFFIX,instagram.com,Proxy
+  - DOMAIN-KEYWORD,metaai,Proxy
