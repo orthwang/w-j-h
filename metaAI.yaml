@@ -1,10 +1,27 @@
-# Meta AI 专项分流
-  - DOMAIN-SUFFIX,meta.ai,Proxy
-  - DOMAIN-SUFFIX,atmeta.com,Proxy
-  - DOMAIN-SUFFIX,fbcdn.net,Proxy
-  - DOMAIN-SUFFIX,facebook.com,Proxy
-  - DOMAIN-SUFFIX,facebook.net,Proxy
-  - DOMAIN-SUFFIX,fbsbx.com,Proxy
-  - DOMAIN-SUFFIX,oculus.com,Proxy
-  - DOMAIN-SUFFIX,instagram.com,Proxy
-  - DOMAIN-KEYWORD,metaai,Proxy
+
+  # Meta AI 核心
+  - DOMAIN-SUFFIX,meta.ai,Facebook
+  - DOMAIN-SUFFIX,metaai.com,Facebook
+  - DOMAIN-KEYWORD,metaai,Facebook
+
+  # WhatsApp 专项
+  - DOMAIN-SUFFIX,whatsapp.com,Facebook
+  - DOMAIN-SUFFIX,whatsapp.net,Facebook
+  - DOMAIN-KEYWORD,whatsapp,Facebook
+
+  # Messenger 专项
+  - DOMAIN-SUFFIX,messenger.com,Facebook
+  - DOMAIN-SUFFIX,m.me,Facebook
+
+  # 媒体上传与视觉识别 (Look and Tell Me)
+  - DOMAIN-SUFFIX,fbcdn.net,Facebook
+  - DOMAIN-SUFFIX,fbsbx.com,Facebook
+  - DOMAIN-SUFFIX,cdninstagram.com,Facebook
+
+  # 账户认证与硬件检测
+  - DOMAIN-SUFFIX,atmeta.com,Facebook
+  - DOMAIN-SUFFIX,facebook.com,Facebook
+  - DOMAIN-SUFFIX,facebook.net,Facebook
+  - DOMAIN-SUFFIX,instagram.com,Facebook
+  - DOMAIN-SUFFIX,oculus.com,Facebook
+
