@@ -1,23 +1,19 @@
- # Meta AI 核心
+# Meta AI 核心
 - DOMAIN-SUFFIX,meta.ai,Meta AI
 - DOMAIN-SUFFIX,metaai.com,Meta AI
 - DOMAIN-KEYWORD,metaai,Meta AI
-
-  # WhatsApp 专项
+# WhatsApp 专项
 - DOMAIN-SUFFIX,whatsapp.com,Meta AI
 - DOMAIN-SUFFIX,whatsapp.net,Meta AI
 - DOMAIN-KEYWORD,whatsapp,Meta AI
-
-  # Messenger 专项
+# Messenger 专项
 - DOMAIN-SUFFIX,messenger.com,Meta AI
 - DOMAIN-SUFFIX,m.me,Meta AI
-
-  # 媒体上传与视觉识别 (Look and Tell Me)
+# 媒体上传与视觉识别 (Look and Tell Me)
 - DOMAIN-SUFFIX,fbcdn.net,Meta AI
 - DOMAIN-SUFFIX,fbsbx.com,Meta AI
 - DOMAIN-SUFFIX,cdninstagram.com,Meta AI
-
-  # 账户认证与硬件检测
+# 账户认证与硬件检测
 - DOMAIN-SUFFIX,atmeta.com,Meta AI
 - DOMAIN-SUFFIX,facebook.com,Meta AI
 - DOMAIN-SUFFIX,facebook.net,Meta AI
