@@ -1,0 +1,42 @@
+payload:
+  # > 1. BBC 主域名 (官网、登录、基础API接口)
+  - DOMAIN-SUFFIX,bbc.co.uk
+  - DOMAIN-SUFFIX,bbc.com
+  - DOMAIN-SUFFIX,bbci.co.uk
+  - DOMAIN-SUFFIX,bbc.net.uk
+  - DOMAIN-SUFFIX,bbcmedia.co.uk
+  - DOMAIN-SUFFIX,bbc.co
+  - DOMAIN-SUFFIX,bbc.in
+  - DOMAIN-SUFFIX,bbcx.co.uk
+  - DOMAIN-SUFFIX,bbcstudios.com
+  - DOMAIN-SUFFIX,bbcrewind.co.uk
+  
+  # > 2. iPlayer 专用视频分发 CDN (极其关键，漏掉会导致视频无法加载)
+  - DOMAIN-SUFFIX,aod-dash-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,aod-hls-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,vod-dash-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,vod-hls-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,vod-sub-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,vod-thumb-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,as-dash-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,as-hls-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,vs-hls-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,vs-cmaf-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,bbccom-a.akamaihd.net
+  - DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net
+  - DOMAIN-SUFFIX,bbcfmt.s.llnwd.net
+  - DOMAIN-SUFFIX,b-cdn.co.uk
+  
+  # > 3. 泛匹配关键字 (兜底各种动态生成的流媒体子域名)
+  - DOMAIN-KEYWORD,bbcfmt
+  - DOMAIN-KEYWORD,uk-live
+  
+  # > 4. 其他相关与追踪 (避免 App 检测到网络异常而封锁)
+  - DOMAIN-SUFFIX,bbcverticals.com
+  - DOMAIN-SUFFIX,bbcpersian.com
+  
+  # > 5. IP 兜底 (电视端 App 经常会绕过 DNS，直接向底层 IP 发送请求，必须拦截)
+  - IP-CIDR,212.58.224.0/19,no-resolve
+  - IP-CIDR,132.185.0.0/16,no-resolve
+  - IP-CIDR,185.112.156.0/22,no-resolve
+  - IP-CIDR,89.234.10.252/30,no-resolve
