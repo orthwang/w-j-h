@@ -2,7 +2,7 @@
 
 # =========================================================
 # 功能: 高性能全量初始化 (破除锁死 + 系统升级 + 激进 BBR + 强制对时)
-# 适用: DMIT、日本、英国所有 VPS (解决新机 apt 卡死与时间报错)
+# 适用: DMIT、日本、英国所有 VPS (已集成 bc 计算器支持完整自检)
 # =========================================================
 
 echo ">>> [1/4] 正在清理进程锁并进行系统全量升级..."
@@ -26,7 +26,6 @@ ntpdate -u ntp.aliyun.com || ntpdate -u pool.ntp.org
 systemctl enable --now systemd-timesyncd
 
 echo ">>> [3/4] 正在注入激进版 BBR 网络优化参数..."
-# 写入增强版内核参数
 cat > /etc/sysctl.d/99-performance.conf <<EOF
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
@@ -41,7 +40,8 @@ EOF
 sysctl --system
 
 echo ">>> [4/4] 正在安装基础工具包..."
-apt-get install -y curl wget git vim sudo lsof tar bzip2 htop
+# 完美补齐：加入了 bc，确保 check.sh 时间误差检测 100% 绿灯生效
+apt-get install -y curl wget git vim sudo lsof tar bzip2 htop bc
 
 echo "================================================="
 echo "✅ 高性能初始化完成！"
