@@ -1,51 +1,20 @@
 #!/bin/bash
-
-# =========================================================
-# 功能: 高性能全量初始化 (破除锁死 + 系统升级 + 激进 BBR + 强制对时)
-# 适用: DMIT、日本、英国所有 VPS (已集成 bc 计算器支持完整自检)
-# =========================================================
-
-echo ">>> [1/4] 正在清理进程锁并进行系统全量升级..."
-export DEBIAN_FRONTEND=noninteractive
-
-# 强行解除新装系统可能卡死的 apt 进程锁
-rm -f /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lock
-killall -9 apt apt-get dpkg 2>/dev/null
-dpkg --configure -a 2>/dev/null
-
-# 核心修改：强制无视 Debian 源的时间校验 (解决时空悖论)
-apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false
-
-# 强制保持旧配置，防止升级内核时弹出交互菜单导致脚本卡死
-apt-get dist-upgrade -y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold
-
-echo ">>> [2/4] 正在暴力同步时间 (Reality 核心命门)..."
-apt-get install -y ntpdate systemd-timesyncd
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-ntpdate -u ntp.aliyun.com || ntpdate -u pool.ntp.org
-systemctl enable --now systemd-timesyncd
-
-echo ">>> [3/4] 正在注入激进版 BBR 网络优化参数..."
-cat > /etc/sysctl.d/99-performance.conf <<EOF
-net.core.default_qdisc=fq
-net.ipv4.tcp_congestion_control=bbr
-net.ipv4.tcp_fastopen=3
-net.ipv4.tcp_slow_start_after_idle=0
-net.ipv4.tcp_rmem=4096 87380 67108864
-net.ipv4.tcp_wmem=4096 65536 67108864
-net.ipv4.tcp_mtu_probing=1
-net.core.rmem_max=67108864
-net.core.wmem_max=67108864
-EOF
-sysctl --system
-
-echo ">>> [4/4] 正在安装基础工具包..."
-# 完美补齐：加入了 bc，确保 check.sh 时间误差检测 100% 绿灯生效
-apt-get install -y curl wget git vim sudo lsof tar bzip2 htop bc
-
-echo "================================================="
-echo "✅ 高性能初始化完成！"
-echo "系统已强制升级，BBR 已拉满，时间已精准对齐。"
-echo "请记住: 针对挑剔的机器，443 端口请使用 Microsoft 伪装。"
-echo "强烈建议: 请输入 reboot 重启一次服务器，让新内核彻底生效。"
-echo "================================================="
+echo "========= 🛡️  VPS 运行状态深度自检 ========="
+echo -n "[1/5] BBR 加速状态: "
+bbr_status=$(sysctl net.ipv4.tcp_congestion_control | awk '{print $3}')
+if [ "$bbr_status" == "bbr" ]; then echo -e "\e[32m已开启 (OK)\e[0m"; else echo -e "\e[31m未开启 (FAIL)\e[0m"; fi
+echo -n "[2/5] 网络栈优化: "
+tfo_status=$(cat /proc/sys/net/ipv4/tcp_fastopen)
+if [ "$tfo_status" == "3" ]; then echo -e "\e[32m高性能模式 (OK)\e[0m"; else echo -e "\e[33m默认模式 (建议检查)\e[0m"; fi
+echo -n "[3/5] 系统时区: "
+timezone=$(date +%Z)
+if [ "$timezone" == "CST" ]; then echo -e "\e[32m上海/北京时间 (OK)\e[0m"; else echo -e "\e[31m非中国时区 ($timezone)\e[0m"; fi
+echo -n "[3.1] 时间偏差值: "
+offset=$(ntpdate -q ntp.aliyun.com 2>/dev/null | tail -1 | awk '{print $6}')
+if (( $(echo "$offset < 1" | bc -l) )); then echo -e "\e[32m误差 $offset 秒 (极准)\e[0m"; else echo -e "\e[31m误差 $offset 秒 (Reality 握手高风险)\e[0m"; fi
+echo -n "[4/5] 当前内核版本: "
+uname -r
+echo -n "[5/5] 443 端口监听: "
+port_443=$(ss -lpnt | grep :443)
+if [ -z "$port_443" ]; then echo -e "\e[33m空闲 (等待安装节点)\e[0m"; else echo -e "\e[32m已占用 (OK)\e[0m"; fi
+echo "=========================================="
