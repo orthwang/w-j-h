@@ -1,36 +1,29 @@
 #!/bin/bash
 
-# 0. 权限检查：确保是以 root 身份运行
-if [[ $EUID -ne 0 ]]; then
-   echo "错误：请使用 root 权限运行此脚本 (sudo -i 或 sudo bash)。"
-   exit 1
-fi
+echo ">>> 开始初始化 VPS 环境..."
 
-# 1. 修正时间
-echo "正在同步时间为 Asia/Shanghai..."
+# 1. 更新系统包并安装基础工具
+echo ">>> 正在更新系统组件 (这可能需要几分钟)..."
+apt update && apt upgrade -y
+apt install -y curl wget git vim sudo
+
+# 2. 设置系统时区为亚洲/上海
+echo ">>> 正在同步时区为 Asia/Shanghai..."
 timedatectl set-timezone Asia/Shanghai
-hwclock --systohc
 
-# 2. 开启 BBR 加速
-echo "正在检查并开启 BBR 加速..."
-if ! grep -q "net.ipv4.tcp_congestion_control=bbr" /etc/sysctl.conf; then
-    echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-    echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-    sysctl -p
-    echo "BBR 开启成功！"
-else
-    echo "BBR 已经开启，跳过设置。"
-fi
+# 3. 开启 BBR 网络加速
+echo ">>> 正在开启 BBR 拥塞控制..."
+sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf
+sed -i '/net.ipv4.tcp_congestion_control/d' /etc/sysctl.conf
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
 
-# 3. 系统全量升级 (防卡死模式)
-echo "正在全量升级系统，请稍候..."
-export DEBIAN_FRONTEND=noninteractive
-apt update
-apt upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
-apt autoremove -y
-
-echo "------------------------------------------------"
-echo "初始化完成！"
-echo "当前时间: $(date)"
-echo "状态：时间已对齐，BBR 已开启，系统已升级到最新。"
-echo "------------------------------------------------"
+# 4. 倒计时并自动重启
+echo "================================================="
+echo "初始化全部完成！"
+echo "系统已经更新了内核和网络配置。"
+echo "VPS 将在 3 秒后自动重启，请在 1 分钟后重新连接 SSH。"
+echo "================================================="
+sleep 3
+reboot
