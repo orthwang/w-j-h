@@ -43,13 +43,14 @@ payload:
   # =========================================
   #              ITV / ITVX 规则
   # =========================================
-  # > 1. ITV / ITVX 主域名
+  # > 1. ITV / ITVX 主域名及云端 API
   - DOMAIN-SUFFIX,itv.com
   - DOMAIN-SUFFIX,itvx.com
   - DOMAIN-SUFFIX,itvstatic.com
   - DOMAIN-SUFFIX,itv.co.uk
   - DOMAIN-SUFFIX,itvx.co.uk
   - DOMAIN-SUFFIX,itvhub.com
+  - DOMAIN,europe-west1-itv-ds-prd.cloudfunctions.net # 新增：ITV 云端函数 API
   
   # > 2. 核心视频流、CDN、DRM 鉴权及播放器授权
   - DOMAIN,itvpnp.live.ott.irdeto.com
@@ -81,7 +82,8 @@ payload:
   - DOMAIN-SUFFIX,appsflyersdk.com
   - DOMAIN-SUFFIX,dotmetrics.net
   
-  # > 5. 广告服务与兜底
+  # > 5. 广告服务、防作弊与兜底
+  - DOMAIN-SUFFIX,doubleverify.com # 新增：DoubleVerify 广告验证
   - DOMAIN-SUFFIX,fwmrm.net
   - DOMAIN-KEYWORD,itvx
 
