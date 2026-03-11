@@ -1,4 +1,7 @@
 payload:
+  # =========================================
+  #                 BBC 规则
+  # =========================================
   # > 1. BBC 主域名 (官网、登录、基础API接口)
   - DOMAIN-SUFFIX,bbc.co.uk
   - DOMAIN-SUFFIX,bbc.com
@@ -40,3 +43,32 @@ payload:
   - IP-CIDR,132.185.0.0/16,no-resolve
   - IP-CIDR,185.112.156.0/22,no-resolve
   - IP-CIDR,89.234.10.252/30,no-resolve
+
+  # =========================================
+  #              ITV / ITVX 规则
+  # =========================================
+  # > 1. ITV / ITVX 主域名及静态资源
+  - DOMAIN-SUFFIX,itv.com
+  - DOMAIN-SUFFIX,itvx.com
+  - DOMAIN-SUFFIX,itvstatic.com
+  - DOMAIN-SUFFIX,itv.co.uk
+  - DOMAIN-SUFFIX,itvx.co.uk
+  - DOMAIN-SUFFIX,itvhub.com
+  
+  # > 2. ITV 视频流、CDN 及 DRM 鉴权域名 (播放核心)
+  - DOMAIN,itvpnp.live.ott.irdeto.com
+  - DOMAIN,itvpnpmobile-a.akamaihd.net
+  - DOMAIN,sks.itvpnp.live.ott.irdeto.com
+  - DOMAIN,simus.itvpnp.live.ott.irdeto.com
+  - DOMAIN,sdp.itv.com
+  - DOMAIN,tomahawk.itv.com
+  - DOMAIN,playlist.itv.com
+  - DOMAIN,itv.com.edgekey.net
+  - DOMAIN-SUFFIX,itv.net
+  
+  # > 3. ITV 数据统计与分析域名
+  - DOMAIN-SUFFIX,itv.demdex.net
+  - DOMAIN-SUFFIX,itv.112.2o7.net
+  
+  # > 4. ITV 关键词匹配 (全局兜底)
+  - DOMAIN-KEYWORD,itvx
