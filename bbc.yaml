@@ -55,7 +55,7 @@ payload:
   - DOMAIN-SUFFIX,itvx.co.uk
   - DOMAIN-SUFFIX,itvhub.com
   
-  # > 2. 视频流、CDN 及 DRM 鉴权域名 (播放核心)
+  # > 2. 视频流、CDN、DRM 鉴权及播放器授权 (播放核心)
   - DOMAIN,itvpnp.live.ott.irdeto.com
   - DOMAIN,itvpnpmobile-a.akamaihd.net
   - DOMAIN,sks.itvpnp.live.ott.irdeto.com
@@ -65,6 +65,7 @@ payload:
   - DOMAIN,playlist.itv.com
   - DOMAIN,itv.com.edgekey.net
   - DOMAIN-SUFFIX,itv.net
+  - DOMAIN-SUFFIX,theoplayer.com
   
   # > 3. 界面静态资源 (剧集海报、视频缩略图、UI 图标)
   - DOMAIN-SUFFIX,ctfassets.net
@@ -78,6 +79,7 @@ payload:
   - DOMAIN-SUFFIX,conviva.com
   - DOMAIN-KEYWORD,splunkcloud
   - DOMAIN,server-side-tagging-120973504724.europe-west2.run.app
+  - DOMAIN-SUFFIX,2cnt.net
   
   # > 5. 广告服务 (防止去广告规则误杀导致 ITVX 正片黑屏报错)
   - DOMAIN-SUFFIX,fwmrm.net
