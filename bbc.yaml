@@ -14,7 +14,7 @@ payload:
   - DOMAIN-SUFFIX,bbcstudios.com
   - DOMAIN-SUFFIX,bbcrewind.co.uk
   
-  # > 2. iPlayer 专用视频分发 CDN (极其关键，漏掉会导致视频无法加载)
+  # > 2. iPlayer 专用视频分发 CDN (极其关键)
   - DOMAIN-SUFFIX,aod-dash-uk-live.akamaized.net
   - DOMAIN-SUFFIX,aod-hls-uk-live.akamaized.net
   - DOMAIN-SUFFIX,vod-dash-uk-live.akamaized.net
@@ -38,7 +38,7 @@ payload:
   - DOMAIN-SUFFIX,bbcverticals.com
   - DOMAIN-SUFFIX,bbcpersian.com
   
-  # > 5. IP 兜底 (电视端 App 经常会绕过 DNS，直接向底层 IP 发送请求，必须拦截)
+  # > 5. IP 兜底 (拦截电视端 App 绕过 DNS 直接发送的底层 IP 请求)
   - IP-CIDR,212.58.224.0/19,no-resolve
   - IP-CIDR,132.185.0.0/16,no-resolve
   - IP-CIDR,185.112.156.0/22,no-resolve
@@ -47,7 +47,7 @@ payload:
   # =========================================
   #              ITV / ITVX 规则
   # =========================================
-  # > 1. ITV / ITVX 主域名及静态资源
+  # > 1. ITV / ITVX 主域名
   - DOMAIN-SUFFIX,itv.com
   - DOMAIN-SUFFIX,itvx.com
   - DOMAIN-SUFFIX,itvstatic.com
@@ -55,7 +55,7 @@ payload:
   - DOMAIN-SUFFIX,itvx.co.uk
   - DOMAIN-SUFFIX,itvhub.com
   
-  # > 2. ITV 视频流、CDN 及 DRM 鉴权域名 (播放核心)
+  # > 2. 视频流、CDN 及 DRM 鉴权域名 (播放核心)
   - DOMAIN,itvpnp.live.ott.irdeto.com
   - DOMAIN,itvpnpmobile-a.akamaihd.net
   - DOMAIN,sks.itvpnp.live.ott.irdeto.com
@@ -66,9 +66,21 @@ payload:
   - DOMAIN,itv.com.edgekey.net
   - DOMAIN-SUFFIX,itv.net
   
-  # > 3. ITV 数据统计与分析域名
+  # > 3. 界面静态资源 (剧集海报、视频缩略图、UI 图标)
+  - DOMAIN-SUFFIX,ctfassets.net
+  
+  # > 4. 遥测、日志、分析与监控 (防止 App 卡顿及防范 IP 泄漏)
   - DOMAIN-SUFFIX,itv.demdex.net
   - DOMAIN-SUFFIX,itv.112.2o7.net
+  - DOMAIN-SUFFIX,amplitude.com
+  - DOMAIN-SUFFIX,launchdarkly.com
+  - DOMAIN-SUFFIX,braze.eu
+  - DOMAIN-SUFFIX,conviva.com
+  - DOMAIN-KEYWORD,splunkcloud
+  - DOMAIN,server-side-tagging-120973504724.europe-west2.run.app
   
-  # > 4. ITV 关键词匹配 (全局兜底)
+  # > 5. 广告服务 (防止去广告规则误杀导致 ITVX 正片黑屏报错)
+  - DOMAIN-SUFFIX,fwmrm.net
+  
+  # > 6. ITV 关键词匹配 (全局兜底)
   - DOMAIN-KEYWORD,itvx
