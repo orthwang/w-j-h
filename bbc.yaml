@@ -86,3 +86,49 @@ payload:
   
   # > 6. ITV 关键词匹配 (全局兜底)
   - DOMAIN-KEYWORD,itvx
+
+  # =========================================
+  #              Channel 4 规则
+  # =========================================
+  # > 1. Channel 4 主域名及API
+  - DOMAIN-SUFFIX,channel4.com
+  
+  # > 2. 视频分发 (CDN) 与图片资源 (极其关键，防止加载卡死或无海报)
+  - DOMAIN-SUFFIX,c4assets.com
+  - DOMAIN-SUFFIX,c4assets.com.edgesuite.net
+  - DOMAIN-SUFFIX,bips.channel4.com
+  - DOMAIN-SUFFIX,ais.channel4.com
+  
+  # > 3. 用户身份与单点登录服务 (SSO)
+  - DOMAIN-SUFFIX,identity.channel4.com
+  - DOMAIN-SUFFIX,p.gigya.com # Gigya 提供很多英美流媒体的用户系统后台
+  
+  # > 4. DRM 鉴权与播放器 telemetry (防止视频转圈报错)
+  - DOMAIN-SUFFIX,optimizely.com # A/B测试与播放器配置
+  - DOMAIN-SUFFIX,yospace.com # 视频内广告插入技术 (不走代理可能会导致正片也无法播放)
+  
+  # > 5. Channel 4 关键词匹配 (全局兜底)
+  - DOMAIN-KEYWORD,channel4
+
+  # =========================================
+  #                 My5 规则
+  # =========================================
+  # > 1. My5 及 Channel 5 主域名
+  - DOMAIN-SUFFIX,channel5.com
+  - DOMAIN-SUFFIX,my5.tv
+  
+  # > 2. 核心视频 API 与分发网络
+  - DOMAIN-SUFFIX,5demand.com
+  - DOMAIN-SUFFIX,mtvnservices.com # My5 隶属于派拉蒙，使用了很多其母公司的视频基建
+  - DOMAIN-SUFFIX,mtvservices.com
+  - DOMAIN-SUFFIX,play.five.tv
+  
+  # > 3. 界面图库与静态资源
+  - DOMAIN-SUFFIX,images.my5.tv
+  
+  # > 4. DRM、用户追踪与广告防杀
+  - DOMAIN-SUFFIX,imrworldwide.com
+  - DOMAIN-SUFFIX,scorecardresearch.com
+  
+  # > 5. My5 关键词匹配 (全局兜底)
+  - DOMAIN-KEYWORD,my5
