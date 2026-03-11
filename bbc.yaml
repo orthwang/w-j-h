@@ -50,7 +50,7 @@ payload:
   - DOMAIN-SUFFIX,itv.co.uk
   - DOMAIN-SUFFIX,itvx.co.uk
   - DOMAIN-SUFFIX,itvhub.com
-  - DOMAIN,europe-west1-itv-ds-prd.cloudfunctions.net # 新增：ITV 云端函数 API
+  - DOMAIN,europe-west1-itv-ds-prd.cloudfunctions.net
   
   # > 2. 核心视频流、CDN、DRM 鉴权及播放器授权
   - DOMAIN,itvpnp.live.ott.irdeto.com
@@ -67,7 +67,7 @@ payload:
   # > 3. 界面静态资源 (剧集海报、UI 图标)
   - DOMAIN-SUFFIX,ctfassets.net
   
-  # > 4. 遥测、日志、分析与监测 (防范 IP 泄漏、地理位置检测与配置)
+  # > 4. 遥测、日志、分析与监测
   - DOMAIN-SUFFIX,itv.demdex.net
   - DOMAIN-SUFFIX,itv.112.2o7.net
   - DOMAIN-SUFFIX,amplitude.com
@@ -81,9 +81,10 @@ payload:
   - DOMAIN-SUFFIX,urbanairship.com
   - DOMAIN-SUFFIX,appsflyersdk.com
   - DOMAIN-SUFFIX,dotmetrics.net
+  - DOMAIN-SUFFIX,adobedtm.com
   
   # > 5. 广告服务、防作弊与兜底
-  - DOMAIN-SUFFIX,doubleverify.com # 新增：DoubleVerify 广告验证
+  - DOMAIN-SUFFIX,doubleverify.com
   - DOMAIN-SUFFIX,fwmrm.net
   - DOMAIN-KEYWORD,itvx
 
@@ -104,9 +105,11 @@ payload:
   - DOMAIN-SUFFIX,identity.channel4.com
   - DOMAIN-SUFFIX,p.gigya.com
   
-  # > 4. DRM 与 动态广告插入 (Yospace)
+  # > 4. DRM、广告、QoS 与隐私合规
   - DOMAIN-SUFFIX,optimizely.com
   - DOMAIN-SUFFIX,yospace.com
+  - DOMAIN-SUFFIX,ketchcdn.com
+  - DOMAIN-SUFFIX,youboranqs01.com
   - DOMAIN-KEYWORD,channel4
 
   # =========================================
@@ -122,9 +125,11 @@ payload:
   - DOMAIN-SUFFIX,mtvnservices.com
   - DOMAIN-SUFFIX,mtvservices.com
   - DOMAIN-SUFFIX,play.five.tv
+  - DOMAIN-SUFFIX,viacomcbs.digital # 新增：派拉蒙/ViacomCBS 全局流媒体控制中枢
   
-  # > 3. 界面图库与分析
+  # > 3. 界面图库、母公司级遥测与分析
   - DOMAIN-SUFFIX,images.my5.tv
   - DOMAIN-SUFFIX,imrworldwide.com
   - DOMAIN-SUFFIX,scorecardresearch.com
+  - DOMAIN-SUFFIX,omtrdc.net
   - DOMAIN-KEYWORD,my5
