@@ -51,7 +51,7 @@ payload:
   - DOMAIN-SUFFIX,itvx.co.uk
   - DOMAIN-SUFFIX,itvhub.com
   
-  # > 2. 视频流、CDN、DRM 鉴权及播放器授权 (播放核心)
+  # > 2. 核心视频流、CDN、DRM 鉴权及播放器授权
   - DOMAIN,itvpnp.live.ott.irdeto.com
   - DOMAIN,itvpnpmobile-a.akamaihd.net
   - DOMAIN,sks.itvpnp.live.ott.irdeto.com
@@ -61,12 +61,12 @@ payload:
   - DOMAIN,playlist.itv.com
   - DOMAIN,itv.com.edgekey.net
   - DOMAIN-SUFFIX,itv.net
-  - DOMAIN-SUFFIX,theoplayer.com # 重要：电视端播放器授权
+  - DOMAIN-SUFFIX,theoplayer.com
   
   # > 3. 界面静态资源 (剧集海报、UI 图标)
   - DOMAIN-SUFFIX,ctfassets.net
   
-  # > 4. 遥测、日志、分析与监控 (防范 IP 泄漏与卡顿)
+  # > 4. 遥测、日志、分析与监测 (防范 IP 泄漏、地理位置检测与配置)
   - DOMAIN-SUFFIX,itv.demdex.net
   - DOMAIN-SUFFIX,itv.112.2o7.net
   - DOMAIN-SUFFIX,amplitude.com
@@ -76,7 +76,10 @@ payload:
   - DOMAIN-KEYWORD,splunkcloud
   - DOMAIN,server-side-tagging-120973504724.europe-west2.run.app
   - DOMAIN-SUFFIX,2cnt.net
-  - DOMAIN-SUFFIX,app-measurement.com # 新增：Firebase 数据上报
+  - DOMAIN-SUFFIX,app-measurement.com
+  - DOMAIN-SUFFIX,urbanairship.com
+  - DOMAIN-SUFFIX,appsflyersdk.com
+  - DOMAIN-SUFFIX,dotmetrics.net
   
   # > 5. 广告服务与兜底
   - DOMAIN-SUFFIX,fwmrm.net
