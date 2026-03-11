@@ -125,11 +125,12 @@ payload:
   - DOMAIN-SUFFIX,mtvnservices.com
   - DOMAIN-SUFFIX,mtvservices.com
   - DOMAIN-SUFFIX,play.five.tv
-  - DOMAIN-SUFFIX,viacomcbs.digital # 新增：派拉蒙/ViacomCBS 全局流媒体控制中枢
+  - DOMAIN-SUFFIX,viacomcbs.digital
   
-  # > 3. 界面图库、母公司级遥测与分析
+  # > 3. 界面图库、母公司级遥测与隐私合规
   - DOMAIN-SUFFIX,images.my5.tv
   - DOMAIN-SUFFIX,imrworldwide.com
   - DOMAIN-SUFFIX,scorecardresearch.com
   - DOMAIN-SUFFIX,omtrdc.net
+  - DOMAIN-SUFFIX,privacy.paramount.com # 新增：派拉蒙隐私与 Cookie 授权
   - DOMAIN-KEYWORD,my5
