@@ -73,6 +73,7 @@ payload:
   - DOMAIN-SUFFIX,amplitude.com
   - DOMAIN-SUFFIX,launchdarkly.com
   - DOMAIN-SUFFIX,braze.eu
+  - DOMAIN-SUFFIX,braze.com # 新增：Braze 全球/美国区遥测节点
   - DOMAIN-SUFFIX,conviva.com
   - DOMAIN-KEYWORD,splunkcloud
   - DOMAIN,server-side-tagging-120973504724.europe-west2.run.app
@@ -100,8 +101,9 @@ payload:
   - DOMAIN-SUFFIX,c4assets.com.edgesuite.net
   - DOMAIN-SUFFIX,bips.channel4.com
   - DOMAIN-SUFFIX,ais.channel4.com
-  - DOMAIN,player.akamaized.net # 新增：Akamai 核心播放器框架
-  - DOMAIN,akadash0.akamaized.net # 新增：Akamai DASH 正片视频流
+  - DOMAIN,player.akamaized.net
+  - DOMAIN,akadash0.akamaized.net
+  - DOMAIN-SUFFIX,redbeemedia.com
   
   # > 3. 用户身份与身份验证 (SSO)
   - DOMAIN-SUFFIX,identity.channel4.com
@@ -110,11 +112,12 @@ payload:
   # > 4. DRM、广告、QoS 与隐私合规
   - DOMAIN-SUFFIX,optimizely.com
   - DOMAIN-SUFFIX,yospace.com
-  - DOMAIN-SUFFIX,ketchcdn.com
+  - DOMAIN-KEYWORD,ketch
   - DOMAIN-SUFFIX,youboranqs01.com
   - DOMAIN-SUFFIX,youborafds01.com
   - DOMAIN-KEYWORD,youbora
   - DOMAIN-SUFFIX,adsrvr.org
+  - DOMAIN-SUFFIX,mparticle.com
   - DOMAIN-KEYWORD,channel4
 
   # =========================================
