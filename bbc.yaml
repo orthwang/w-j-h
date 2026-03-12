@@ -68,7 +68,7 @@ payload:
   - DOMAIN-SUFFIX,ctfassets.net
   
   # > 4. 遥测、日志、分析与监测
-  - DOMAIN-SUFFIX,itv.demdex.net
+  - DOMAIN-SUFFIX,demdex.net
   - DOMAIN-SUFFIX,itv.112.2o7.net
   - DOMAIN-SUFFIX,amplitude.com
   - DOMAIN-SUFFIX,launchdarkly.com
@@ -82,6 +82,7 @@ payload:
   - DOMAIN-SUFFIX,urbanairship.com
   - DOMAIN-SUFFIX,appsflyersdk.com
   - DOMAIN-SUFFIX,appsflyer.com
+  - DOMAIN-SUFFIX,adjust.com
   - DOMAIN-SUFFIX,dotmetrics.net
   - DOMAIN-SUFFIX,adobedtm.com
   
@@ -107,7 +108,7 @@ payload:
   - DOMAIN,player.akamaized.net
   - DOMAIN,akadash0.akamaized.net
   - DOMAIN-SUFFIX,redbeemedia.com
-  - DOMAIN-SUFFIX,akamaihd.net # 新增：Akamai HD 核心视频流兜底
+  - DOMAIN-SUFFIX,akamaihd.net
   
   # > 3. 用户身份与身份验证 (SSO)
   - DOMAIN-SUFFIX,identity.channel4.com
@@ -122,6 +123,8 @@ payload:
   - DOMAIN-KEYWORD,youbora
   - DOMAIN-SUFFIX,adsrvr.org
   - DOMAIN-SUFFIX,mparticle.com
+  - DOMAIN-SUFFIX,flashtalking.com # 新增：视频广告下发
+  - DOMAIN-SUFFIX,stickyadstv.com  # 新增：Freewheel 视频广告
   - DOMAIN-KEYWORD,channel4
 
   # =========================================
@@ -139,6 +142,7 @@ payload:
   - DOMAIN-SUFFIX,play.five.tv
   - DOMAIN-SUFFIX,viacomcbs.digital
   - DOMAIN-SUFFIX,cbsivideo.com
+  - DOMAIN-SUFFIX,paramount.tech # 新增：派拉蒙 Morpheus 核心视频管道
   
   # > 3. 界面图库、母公司级遥测与隐私合规
   - DOMAIN-SUFFIX,images.my5.tv
@@ -147,7 +151,12 @@ payload:
   - DOMAIN-SUFFIX,omtrdc.net
   - DOMAIN-SUFFIX,privacy.paramount.com
   
-  # > 4. 广告服务与防作弊 (新设 My5 广告专区)
+  # > 4. 广告服务、竞价与防作弊 (新设 My5 广告专区)
   - DOMAIN-SUFFIX,skymedia.co.uk
   - DOMAIN-SUFFIX,adsrvr.org
+  - DOMAIN-SUFFIX,stackadapt.com # 新增：程序化竞价
+  - DOMAIN-SUFFIX,turn.com       # 新增：广告竞价与追踪
+  - DOMAIN-SUFFIX,pippio.com     # 新增：LiveRamp 身份同步
+  - DOMAIN-SUFFIX,rlcdn.com      # 新增：LiveRamp 跨设备识别
+  - DOMAIN-SUFFIX,adform.net     # 新增：Adform 广告引擎
   - DOMAIN-KEYWORD,my5
