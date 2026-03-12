@@ -81,13 +81,15 @@ payload:
   - DOMAIN-SUFFIX,app-measurement.com
   - DOMAIN-SUFFIX,urbanairship.com
   - DOMAIN-SUFFIX,appsflyersdk.com
+  - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,dotmetrics.net
   - DOMAIN-SUFFIX,adobedtm.com
   
   # > 5. 广告服务、防作弊与兜底
+  - DOMAIN,info.startappservice.com
   - DOMAIN-SUFFIX,doubleverify.com
   - DOMAIN-SUFFIX,fwmrm.net
-  - DOMAIN-SUFFIX,startappservice.com # 新增：Start.io 移动端广告与设备特征分析
+  - DOMAIN-SUFFIX,startappservice.com
   - DOMAIN-KEYWORD,itvx
 
   # =========================================
@@ -105,6 +107,7 @@ payload:
   - DOMAIN,player.akamaized.net
   - DOMAIN,akadash0.akamaized.net
   - DOMAIN-SUFFIX,redbeemedia.com
+  - DOMAIN-SUFFIX,akamaihd.net # 新增：Akamai HD 核心视频流兜底
   
   # > 3. 用户身份与身份验证 (SSO)
   - DOMAIN-SUFFIX,identity.channel4.com
