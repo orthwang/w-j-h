@@ -73,7 +73,7 @@ payload:
   - DOMAIN-SUFFIX,amplitude.com
   - DOMAIN-SUFFIX,launchdarkly.com
   - DOMAIN-SUFFIX,braze.eu
-  - DOMAIN-SUFFIX,braze.com # 新增：Braze 全球/美国区遥测节点
+  - DOMAIN-SUFFIX,braze.com
   - DOMAIN-SUFFIX,conviva.com
   - DOMAIN-KEYWORD,splunkcloud
   - DOMAIN,server-side-tagging-120973504724.europe-west2.run.app
@@ -87,6 +87,7 @@ payload:
   # > 5. 广告服务、防作弊与兜底
   - DOMAIN-SUFFIX,doubleverify.com
   - DOMAIN-SUFFIX,fwmrm.net
+  - DOMAIN-SUFFIX,startappservice.com # 新增：Start.io 移动端广告与设备特征分析
   - DOMAIN-KEYWORD,itvx
 
   # =========================================
