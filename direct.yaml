@@ -11,6 +11,7 @@ payload:
   - DOMAIN-KEYWORD,myqnapcloud
   - DOMAIN-KEYWORD,mycloudnas
   - DOMAIN-KEYWORD,bjmvc
+  - DOMAIN-SUFFIX,haoyishu.org
   - DOMAIN-KEYWORD,hohai
   - DOMAIN-KEYWORD,lilyemby
   # - DOMAIN-KEYWORD,mobaiemby
