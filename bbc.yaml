@@ -1,8 +1,8 @@
 payload:
   # =========================================
-  #                 BBC 规则
+  # 1. BBC 全家桶 (iPlayer / Sounds / News)
   # =========================================
-  # > 1. BBC 主域名
+  # > 主域名与应用接口
   - DOMAIN-SUFFIX,bbc.co.uk
   - DOMAIN-SUFFIX,bbc.com
   - DOMAIN-SUFFIX,bbci.co.uk
@@ -13,8 +13,9 @@ payload:
   - DOMAIN-SUFFIX,bbcx.co.uk
   - DOMAIN-SUFFIX,bbcstudios.com
   - DOMAIN-SUFFIX,bbcrewind.co.uk
+  - DOMAIN-SUFFIX,bbcnewsstream.co.uk
   
-  # > 2. iPlayer 专用视频分发 CDN
+  # > 专用视频/音频分发 CDN (含 2024-2025 新增)
   - DOMAIN-SUFFIX,aod-dash-uk-live.akamaized.net
   - DOMAIN-SUFFIX,aod-hls-uk-live.akamaized.net
   - DOMAIN-SUFFIX,vod-dash-uk-live.akamaized.net
@@ -23,36 +24,44 @@ payload:
   - DOMAIN-SUFFIX,vod-thumb-uk-live.akamaized.net
   - DOMAIN-SUFFIX,as-dash-uk-live.akamaized.net
   - DOMAIN-SUFFIX,as-hls-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,vs-dash-uk-live.akamaized.net
   - DOMAIN-SUFFIX,vs-hls-uk-live.akamaized.net
   - DOMAIN-SUFFIX,vs-cmaf-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,as-cmaf-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,bbc-sounds-live.akamaized.net
+  - DOMAIN-SUFFIX,bbcnews-vod.akamaized.net
   - DOMAIN-SUFFIX,bbccom-a.akamaihd.net
   - DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net
   - DOMAIN-SUFFIX,bbcfmt.s.llnwd.net
+  - DOMAIN-SUFFIX,bbc-sounds-live.bbcfmt.hs.llnwd.net
   - DOMAIN-SUFFIX,b-cdn.co.uk
   
-  # > 3. 泛匹配关键字
+  # > 泛匹配关键字
   - DOMAIN-KEYWORD,bbcfmt
   - DOMAIN-KEYWORD,uk-live
   
-  # > 4. IP 兜底 (拦截电视端 App 底层 IP 请求)
+  # > IP 兜底 (拦截电视端 App 底层直连)
   - IP-CIDR,212.58.224.0/19,no-resolve
   - IP-CIDR,132.185.0.0/16,no-resolve
   - IP-CIDR,185.112.156.0/22,no-resolve
   - IP-CIDR,89.234.10.252/30,no-resolve
 
   # =========================================
-  #              ITV / ITVX 规则
+  # 2. ITV / ITVX
   # =========================================
-  # > 1. ITV / ITVX 主域名及云端 API
+  # > 主域名及静态资源
   - DOMAIN-SUFFIX,itv.com
   - DOMAIN-SUFFIX,itvx.com
   - DOMAIN-SUFFIX,itvstatic.com
   - DOMAIN-SUFFIX,itv.co.uk
   - DOMAIN-SUFFIX,itvx.co.uk
   - DOMAIN-SUFFIX,itvhub.com
-  - DOMAIN,europe-west1-itv-ds-prd.cloudfunctions.net
+  - DOMAIN-SUFFIX,itv.net
+  - DOMAIN-SUFFIX,theoplayer.com
+  - DOMAIN-SUFFIX,ctfassets.net
   
-  # > 2. 核心视频流、CDN、DRM 鉴权及播放器授权
+  # > 核心视频流、CDN、DRM 鉴权及精确 API
+  - DOMAIN,europe-west1-itv-ds-prd.cloudfunctions.net
   - DOMAIN,itvpnp.live.ott.irdeto.com
   - DOMAIN,itvpnpmobile-a.akamaihd.net
   - DOMAIN,sks.itvpnp.live.ott.irdeto.com
@@ -61,13 +70,8 @@ payload:
   - DOMAIN,tomahawk.itv.com
   - DOMAIN,playlist.itv.com
   - DOMAIN,itv.com.edgekey.net
-  - DOMAIN-SUFFIX,itv.net
-  - DOMAIN-SUFFIX,theoplayer.com
   
-  # > 3. 界面静态资源 (剧集海报、UI 图标)
-  - DOMAIN-SUFFIX,ctfassets.net
-  
-  # > 4. 遥测、日志、分析与监测
+  # > 遥测、日志、分析与广告
   - DOMAIN-SUFFIX,demdex.net
   - DOMAIN-SUFFIX,itv.112.2o7.net
   - DOMAIN-SUFFIX,amplitude.com
@@ -75,7 +79,6 @@ payload:
   - DOMAIN-SUFFIX,braze.eu
   - DOMAIN-SUFFIX,braze.com
   - DOMAIN-SUFFIX,conviva.com
-  - DOMAIN-KEYWORD,splunkcloud
   - DOMAIN,server-side-tagging-120973504724.europe-west2.run.app
   - DOMAIN-SUFFIX,2cnt.net
   - DOMAIN-SUFFIX,app-measurement.com
@@ -85,73 +88,75 @@ payload:
   - DOMAIN-SUFFIX,adjust.com
   - DOMAIN-SUFFIX,dotmetrics.net
   - DOMAIN-SUFFIX,adobedtm.com
-  
-  # > 5. 广告服务、防作弊与兜底
   - DOMAIN,info.startappservice.com
   - DOMAIN-SUFFIX,doubleverify.com
   - DOMAIN-SUFFIX,fwmrm.net
   - DOMAIN-SUFFIX,startappservice.com
+  
+  # > 泛匹配关键字
+  - DOMAIN-KEYWORD,splunkcloud
   - DOMAIN-KEYWORD,itvx
 
   # =========================================
-  #              Channel 4 规则
+  # 3. Channel 4
   # =========================================
-  # > 1. Channel 4 主域名及 API
+  # > 主域名及 API
   - DOMAIN-SUFFIX,channel4.com
   - DOMAIN-SUFFIX,c4static.com
+  - DOMAIN-SUFFIX,player-channel4.com
   
-  # > 2. 视频分发 (CDN) 与图片资源
+  # > 视频分发 (CDN)、RedBee 体系与图片资源
   - DOMAIN-SUFFIX,c4assets.com
   - DOMAIN-SUFFIX,c4assets.com.edgesuite.net
   - DOMAIN-SUFFIX,bips.channel4.com
   - DOMAIN-SUFFIX,ais.channel4.com
+  - DOMAIN-SUFFIX,redbeemedia.com
+  - DOMAIN-SUFFIX,rbmcdn.com
+  - DOMAIN-SUFFIX,rbmcdn.net
+  - DOMAIN-SUFFIX,akamaihd.net
   - DOMAIN,player.akamaized.net
   - DOMAIN,akadash0.akamaized.net
-  - DOMAIN-SUFFIX,redbeemedia.com
-  - DOMAIN-SUFFIX,akamaihd.net
   
-  # > 3. 用户身份与身份验证 (SSO)
+  # > 用户身份、DRM、广告与合规
   - DOMAIN-SUFFIX,identity.channel4.com
   - DOMAIN-SUFFIX,p.gigya.com
-  
-  # > 4. DRM、广告、QoS 与隐私合规
   - DOMAIN-SUFFIX,optimizely.com
   - DOMAIN-SUFFIX,yospace.com
-  - DOMAIN-KEYWORD,ketch
   - DOMAIN-SUFFIX,youboranqs01.com
   - DOMAIN-SUFFIX,youborafds01.com
-  - DOMAIN-KEYWORD,youbora
   - DOMAIN-SUFFIX,adsrvr.org
   - DOMAIN-SUFFIX,mparticle.com
   - DOMAIN-SUFFIX,flashtalking.com
   - DOMAIN-SUFFIX,stickyadstv.com
+  
+  # > 泛匹配关键字
+  - DOMAIN-KEYWORD,ketch
+  - DOMAIN-KEYWORD,youbora
   - DOMAIN-KEYWORD,channel4
 
   # =========================================
-  #                 My5 规则
+  # 4. My5 (Channel 5)
   # =========================================
-  # > 1. My5 及 Channel 5 主域名
+  # > 主域名与视频 API
   - DOMAIN-SUFFIX,channel5.com
   - DOMAIN-SUFFIX,my5.tv
   - DOMAIN-SUFFIX,ch5.tv
-  
-  # > 2. 核心视频 API 与 派拉蒙底层网络
   - DOMAIN-SUFFIX,5demand.com
+  - DOMAIN-SUFFIX,play.five.tv
+  - DOMAIN-SUFFIX,images.my5.tv
+  
+  # > Paramount / ViacomCBS 底层网络
   - DOMAIN-SUFFIX,mtvnservices.com
   - DOMAIN-SUFFIX,mtvservices.com
-  - DOMAIN-SUFFIX,play.five.tv
   - DOMAIN-SUFFIX,viacomcbs.digital
   - DOMAIN-SUFFIX,cbsivideo.com
   - DOMAIN-SUFFIX,paramount.tech
+  - DOMAIN-SUFFIX,privacy.paramount.com
   
-  # > 3. 界面图库、母公司级遥测与隐私合规
-  - DOMAIN-SUFFIX,images.my5.tv
+  # > 广告服务、精确定位与防作弊
   - DOMAIN-SUFFIX,imrworldwide.com
   - DOMAIN-SUFFIX,scorecardresearch.com
   - DOMAIN-SUFFIX,omtrdc.net
-  - DOMAIN-SUFFIX,privacy.paramount.com
-  
-  # > 4. 广告服务、竞价与防作弊 (新设 My5 广告专区)
   - DOMAIN-SUFFIX,skymedia.co.uk
   - DOMAIN-SUFFIX,adsrvr.org
   - DOMAIN-SUFFIX,stackadapt.com
@@ -159,8 +164,35 @@ payload:
   - DOMAIN-SUFFIX,pippio.com
   - DOMAIN-SUFFIX,rlcdn.com
   - DOMAIN-SUFFIX,adform.net
-  - DOMAIN-SUFFIX,blismedia.com # 新增：Blis 精准地理位置广告
-  - DOMAIN-SUFFIX,crwdcntrl.net # 新增：Lotame 身份指纹同步
-  - DOMAIN-SUFFIX,mdhv.io       # 新增：MDHV 移动端数据金库
-  - DOMAIN-SUFFIX,simpli.fi     # 新增：Simpli.fi 本地化程序化广告
+  - DOMAIN-SUFFIX,blismedia.com
+  - DOMAIN-SUFFIX,crwdcntrl.net
+  - DOMAIN-SUFFIX,mdhv.io
+  - DOMAIN-SUFFIX,simpli.fi
+  
+  # > 泛匹配关键字
   - DOMAIN-KEYWORD,my5
+
+  # =========================================
+  # 5. 英国本土其他核心流媒体 (补充模块)
+  # =========================================
+  # > UKTV Play
+  - DOMAIN-SUFFIX,uktv.co.uk
+  - DOMAIN-SUFFIX,uktvplay.co.uk
+  - DOMAIN-SUFFIX,uktv-static.co.uk
+  - DOMAIN-SUFFIX,uktv-vod.akamaized.net
+  
+  # > STV Player
+  - DOMAIN-SUFFIX,stv.tv
+  - DOMAIN-SUFFIX,player.stv.tv
+  - DOMAIN-SUFFIX,stv-vod.akamaized.net
+  
+  # > BritBox UK
+  - DOMAIN-SUFFIX,britbox.co.uk
+  - DOMAIN-SUFFIX,britbox.com
+  - DOMAIN-SUFFIX,britbox-uk.akamaized.net
+  
+  # > Sky Go / NOW TV
+  - DOMAIN-SUFFIX,nowtv.com
+  - DOMAIN-SUFFIX,skygo.co.uk
+  - DOMAIN-SUFFIX,skycdn.co.uk
+  - DOMAIN-SUFFIX,skyott.com
