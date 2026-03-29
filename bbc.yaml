@@ -2,7 +2,6 @@ payload:
   # =========================================
   # 1. BBC 全家桶 (iPlayer / Sounds / News)
   # =========================================
-  # > 主域名与应用接口
   - DOMAIN-SUFFIX,bbc.co.uk
   - DOMAIN-SUFFIX,bbc.com
   - DOMAIN-SUFFIX,bbci.co.uk
@@ -14,8 +13,6 @@ payload:
   - DOMAIN-SUFFIX,bbcstudios.com
   - DOMAIN-SUFFIX,bbcrewind.co.uk
   - DOMAIN-SUFFIX,bbcnewsstream.co.uk
-  
-  # > 专用视频/音频分发 CDN (含 2024-2025 新增)
   - DOMAIN-SUFFIX,aod-dash-uk-live.akamaized.net
   - DOMAIN-SUFFIX,aod-hls-uk-live.akamaized.net
   - DOMAIN-SUFFIX,vod-dash-uk-live.akamaized.net
@@ -35,12 +32,10 @@ payload:
   - DOMAIN-SUFFIX,bbcfmt.s.llnwd.net
   - DOMAIN-SUFFIX,bbc-sounds-live.bbcfmt.hs.llnwd.net
   - DOMAIN-SUFFIX,b-cdn.co.uk
-  
-  # > 泛匹配关键字
   - DOMAIN-KEYWORD,bbcfmt
   - DOMAIN-KEYWORD,uk-live
   
-  # > IP 兜底 (拦截电视端 App 底层直连)
+  # > BBC 纯正官方 IP 兜底 (绝对安全，防全局 CDN 误伤)
   - IP-CIDR,212.58.224.0/19,no-resolve
   - IP-CIDR,132.185.0.0/16,no-resolve
   - IP-CIDR,185.112.156.0/22,no-resolve
@@ -49,7 +44,6 @@ payload:
   # =========================================
   # 2. ITV / ITVX
   # =========================================
-  # > 主域名及静态资源
   - DOMAIN-SUFFIX,itv.com
   - DOMAIN-SUFFIX,itvx.com
   - DOMAIN-SUFFIX,itvstatic.com
@@ -59,8 +53,6 @@ payload:
   - DOMAIN-SUFFIX,itv.net
   - DOMAIN-SUFFIX,theoplayer.com
   - DOMAIN-SUFFIX,ctfassets.net
-  
-  # > 核心视频流、CDN、DRM 鉴权及精确 API
   - DOMAIN,europe-west1-itv-ds-prd.cloudfunctions.net
   - DOMAIN,itvpnp.live.ott.irdeto.com
   - DOMAIN,itvpnpmobile-a.akamaihd.net
@@ -70,8 +62,6 @@ payload:
   - DOMAIN,tomahawk.itv.com
   - DOMAIN,playlist.itv.com
   - DOMAIN,itv.com.edgekey.net
-  
-  # > 遥测、日志、分析与广告
   - DOMAIN-SUFFIX,demdex.net
   - DOMAIN-SUFFIX,itv.112.2o7.net
   - DOMAIN-SUFFIX,amplitude.com
@@ -92,20 +82,15 @@ payload:
   - DOMAIN-SUFFIX,doubleverify.com
   - DOMAIN-SUFFIX,fwmrm.net
   - DOMAIN-SUFFIX,startappservice.com
-  
-  # > 泛匹配关键字
   - DOMAIN-KEYWORD,splunkcloud
   - DOMAIN-KEYWORD,itvx
 
   # =========================================
   # 3. Channel 4
   # =========================================
-  # > 主域名及 API
   - DOMAIN-SUFFIX,channel4.com
   - DOMAIN-SUFFIX,c4static.com
   - DOMAIN-SUFFIX,player-channel4.com
-  
-  # > 视频分发 (CDN)、RedBee 体系与图片资源
   - DOMAIN-SUFFIX,c4assets.com
   - DOMAIN-SUFFIX,c4assets.com.edgesuite.net
   - DOMAIN-SUFFIX,bips.channel4.com
@@ -116,8 +101,6 @@ payload:
   - DOMAIN-SUFFIX,akamaihd.net
   - DOMAIN,player.akamaized.net
   - DOMAIN,akadash0.akamaized.net
-  
-  # > 用户身份、DRM、广告与合规
   - DOMAIN-SUFFIX,identity.channel4.com
   - DOMAIN-SUFFIX,p.gigya.com
   - DOMAIN-SUFFIX,optimizely.com
@@ -128,8 +111,6 @@ payload:
   - DOMAIN-SUFFIX,mparticle.com
   - DOMAIN-SUFFIX,flashtalking.com
   - DOMAIN-SUFFIX,stickyadstv.com
-  
-  # > 泛匹配关键字
   - DOMAIN-KEYWORD,ketch
   - DOMAIN-KEYWORD,youbora
   - DOMAIN-KEYWORD,channel4
@@ -137,23 +118,18 @@ payload:
   # =========================================
   # 4. My5 (Channel 5)
   # =========================================
-  # > 主域名与视频 API
   - DOMAIN-SUFFIX,channel5.com
   - DOMAIN-SUFFIX,my5.tv
   - DOMAIN-SUFFIX,ch5.tv
   - DOMAIN-SUFFIX,5demand.com
   - DOMAIN-SUFFIX,play.five.tv
   - DOMAIN-SUFFIX,images.my5.tv
-  
-  # > Paramount / ViacomCBS 底层网络
   - DOMAIN-SUFFIX,mtvnservices.com
   - DOMAIN-SUFFIX,mtvservices.com
   - DOMAIN-SUFFIX,viacomcbs.digital
   - DOMAIN-SUFFIX,cbsivideo.com
   - DOMAIN-SUFFIX,paramount.tech
   - DOMAIN-SUFFIX,privacy.paramount.com
-  
-  # > 广告服务、精确定位与防作弊
   - DOMAIN-SUFFIX,imrworldwide.com
   - DOMAIN-SUFFIX,scorecardresearch.com
   - DOMAIN-SUFFIX,omtrdc.net
@@ -168,30 +144,21 @@ payload:
   - DOMAIN-SUFFIX,crwdcntrl.net
   - DOMAIN-SUFFIX,mdhv.io
   - DOMAIN-SUFFIX,simpli.fi
-  
-  # > 泛匹配关键字
   - DOMAIN-KEYWORD,my5
 
   # =========================================
-  # 5. 英国本土其他核心流媒体 (补充模块)
+  # 5. 英国本土其他核心流媒体 (UKTV / STV / BritBox / Sky)
   # =========================================
-  # > UKTV Play
   - DOMAIN-SUFFIX,uktv.co.uk
   - DOMAIN-SUFFIX,uktvplay.co.uk
   - DOMAIN-SUFFIX,uktv-static.co.uk
   - DOMAIN-SUFFIX,uktv-vod.akamaized.net
-  
-  # > STV Player
   - DOMAIN-SUFFIX,stv.tv
   - DOMAIN-SUFFIX,player.stv.tv
   - DOMAIN-SUFFIX,stv-vod.akamaized.net
-  
-  # > BritBox UK
   - DOMAIN-SUFFIX,britbox.co.uk
   - DOMAIN-SUFFIX,britbox.com
   - DOMAIN-SUFFIX,britbox-uk.akamaized.net
-  
-  # > Sky Go / NOW TV
   - DOMAIN-SUFFIX,nowtv.com
   - DOMAIN-SUFFIX,skygo.co.uk
   - DOMAIN-SUFFIX,skycdn.co.uk
