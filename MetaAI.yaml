@@ -34,3 +34,4 @@ payload:
   - DOMAIN-SUFFIX,facebook.com.edgekey.net
   - DOMAIN-SUFFIX,fbworkmail.com
   - DOMAIN-SUFFIX,facebook-internal.com
+  - DOMAIN-SUFFIX,facebookvirtualassistant.com
