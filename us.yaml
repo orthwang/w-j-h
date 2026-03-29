@@ -1,20 +1,37 @@
 payload:
-  - DOMAIN-SUFFIX,pluto.tv
-  - DOMAIN-SUFFIX,plutotv.net
-  - DOMAIN-SUFFIX,tubitv.com
-  - DOMAIN-SUFFIX,tubi.io
-  - DOMAIN-SUFFIX,tubi.video
-  - DOMAIN-KEYWORD,tubi
-  - DOMAIN-KEYWORD,pluto
-  - DOMAIN-KEYWORD,plutotv
-  - DOMAIN-SUFFIX,metadata.provider.plex.tv
-  - DOMAIN-SUFFIX,analytics.plex.tv
-  - DOMAIN-SUFFIX,metadata-static.plex.tv
-  - DOMAIN-SUFFIX,meta.plex.tv
-  - DOMAIN-SUFFIX,plex.tv
+  # =========================================
+  # 1. Google Play 下载与核心 API (防直连截胡，强制美国出口)
+  # =========================================
   - DOMAIN-SUFFIX,googleapis.cn
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
   - DOMAIN-SUFFIX,xn--ngstr-cn-8za9o.com
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt2.com
+
+  # =========================================
+  # 2. Tubi TV (免费影视流媒体)
+  # =========================================
+  - DOMAIN-SUFFIX,tubitv.com
+  - DOMAIN-SUFFIX,tubi.io
+  - DOMAIN-SUFFIX,tubi.video
+  - DOMAIN-KEYWORD,tubi
+
+  # =========================================
+  # 3. Pluto TV (派拉蒙免费电视流)
+  # =========================================
+  - DOMAIN-SUFFIX,pluto.tv
+  - DOMAIN-SUFFIX,plutotv.net
+  - DOMAIN-KEYWORD,pluto
+  - DOMAIN-KEYWORD,plutotv
+
+  # =========================================
+  # 4. Plex (刮削、元数据与服务验证)
+  # =========================================
+  - DOMAIN-SUFFIX,plex.tv
+  # (注：由于上面已经写了 plex.tv 的 SUFFIX，它会自动涵盖所有子域名，
+  # 下面的子域名虽然冗余，但保留可以作为清晰的日志核对参照，不影响性能)
+  - DOMAIN-SUFFIX,meta.plex.tv
+  - DOMAIN-SUFFIX,metadata.provider.plex.tv
+  - DOMAIN-SUFFIX,metadata-static.plex.tv
+  - DOMAIN-SUFFIX,analytics.plex.tv
