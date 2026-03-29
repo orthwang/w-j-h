@@ -1,6 +1,6 @@
 payload:
   # =========================================
-  # 1. 主域名 (DOMAIN-SUFFIX) - 核心域名全家桶
+  # 1. 主域名 (DOMAIN-SUFFIX)
   # =========================================
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,metaai.com
@@ -34,7 +34,7 @@ payload:
   - DOMAIN-SUFFIX,facebookvirtualassistant.com
 
   # =========================================
-  # 2. 动态 CDN 与特征拦截 (DOMAIN-KEYWORD) - 防漏网兜底
+  # 2. 动态 CDN 与特征拦截 (DOMAIN-KEYWORD)
   # =========================================
   - DOMAIN-KEYWORD,metaai
   - DOMAIN-KEYWORD,ar-genai
@@ -43,7 +43,7 @@ payload:
   - DOMAIN-KEYWORD,edge-mqtt
 
   # =========================================
-  # 3. 关键 API (DOMAIN) - 精确匹配特定核心接口
+  # 3. 关键 API (DOMAIN)
   # =========================================
   - DOMAIN,graph.facebook.com
   - DOMAIN,b-api.facebook.com
@@ -52,10 +52,10 @@ payload:
   - DOMAIN,mqtt-mini.facebook.com
 
   # =========================================
-  # 4. 必要 IP-CIDR - Meta 官方核心 ASN IP 段 (拦截 App 底层直连)
+  # 4. 必要 IP-CIDR (Meta 官方核心 ASN IP 段)
   # =========================================
-  - IP-CIDR,31.13.24.0/21,no-resolve
-  - IP-CIDR,31.13.64.0/18,no-resolve
+  # 吸收你的优化：直接使用 31.13 大段包圆
+  - IP-CIDR,31.13.0.0/16,no-resolve
   - IP-CIDR,45.64.40.0/22,no-resolve
   - IP-CIDR,66.220.144.0/20,no-resolve
   - IP-CIDR,69.63.176.0/20,no-resolve
