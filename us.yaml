@@ -12,3 +12,9 @@ payload:
   - DOMAIN-SUFFIX,metadata-static.plex.tv
   - DOMAIN-SUFFIX,meta.plex.tv
   - DOMAIN-SUFFIX,plex.tv
+  - DOMAIN-SUFFIX,googleapis.cn
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+  - DOMAIN-SUFFIX,xn--ngstr-cn-8za9o.com
+  - DOMAIN-SUFFIX,gvt1.com
+  - DOMAIN-SUFFIX,gvt2.com
