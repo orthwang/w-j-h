@@ -13,5 +13,5 @@ payload:
   - DOMAIN-KEYWORD,bjmvc
   - DOMAIN-SUFFIX,haoyishu.org
   - DOMAIN-KEYWORD,hohai
-  - DOMAIN-KEYWORD,lilyemby
+  #- DOMAIN-KEYWORD,lilyemby
   # - DOMAIN-KEYWORD,mobaiemby
