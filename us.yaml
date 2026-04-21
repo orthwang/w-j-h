@@ -1,15 +1,17 @@
 payload:
   # =========================================
-  # 1. Google Play 下载与核心 API
-  # (防直连截胡，强制美国出口，解决更新卡转圈问题)
-  # =========================================
-  - DOMAIN-SUFFIX,googleapis.cn
-  - DOMAIN-SUFFIX,googleapis.com
-  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-  - DOMAIN-KEYWORD,xn--ngstr-lra8j
-  - DOMAIN-SUFFIX,xn--ngstr-cn-8za9o.com
-  - DOMAIN-SUFFIX,gvt1.com
-  - DOMAIN-SUFFIX,gvt2.com
+# 1. Google Play 下载与核心 API（完整补全）
+# =========================================
+- DOMAIN-SUFFIX,googleapis.cn
+- DOMAIN-SUFFIX,googleapis.com
+- DOMAIN-SUFFIX,services.googleapis.cn
+- DOMAIN-SUFFIX,play-fe.googleapis.com
+- DOMAIN-SUFFIX,play.googleapis.com
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+- DOMAIN-KEYWORD,xn--ngstr-lra8j
+- DOMAIN-SUFFIX,xn--ngstr-cn-8za9o.com
+- DOMAIN-SUFFIX,gvt1.com
+- DOMAIN-SUFFIX,gvt2.com
 
   # =========================================
   # 2. Pluto TV 
