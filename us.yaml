@@ -6,6 +6,7 @@ payload:
   - DOMAIN-SUFFIX,googleapis.cn
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+  - DOMAIN-KEYWORD,xn--ngstr-lra8j
   - DOMAIN-SUFFIX,xn--ngstr-cn-8za9o.com
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt2.com
