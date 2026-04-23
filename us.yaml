@@ -44,4 +44,24 @@ payload:
   - DOMAIN-SUFFIX,tubi-cdn.akamaized.net
   - DOMAIN-SUFFIX,tubi-video.akamaized.net
   - DOMAIN-SUFFIX,tubi-vod.akamaized.net
-  - DOMAIN
+  - DOMAIN-SUFFIX,tubi-linear.akamaized.net
+  - DOMAIN-SUFFIX,api.tubitv.com
+  - DOMAIN-SUFFIX,images.tubitv.com
+  - DOMAIN-SUFFIX,player.tubitv.com
+  - DOMAIN-SUFFIX,fastly.tubi.video
+
+  # =========================================
+  # 4. Plex (刮削、元数据与服务验证)
+  # =========================================
+  - DOMAIN-SUFFIX,plex.tv
+  - DOMAIN-SUFFIX,metadata.provider.plex.tv
+  - DOMAIN-SUFFIX,analytics.plex.tv
+  - DOMAIN-SUFFIX,metadata-static.plex.tv
+  - DOMAIN-SUFFIX,meta.plex.tv
+  # --- Plex CDN / API 深度补全 ---
+  - DOMAIN-SUFFIX,plex.direct
+  - DOMAIN-SUFFIX,plex.bz
+  - DOMAIN-SUFFIX,plexapp.com
+  - DOMAIN-SUFFIX,artifacts.plex.tv
+  - DOMAIN-SUFFIX,images.plex.tv
+  - DOMAIN-SUFFIX,cpms.svc.plex.tv
