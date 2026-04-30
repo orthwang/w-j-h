@@ -65,3 +65,13 @@ payload:
   - DOMAIN-SUFFIX,artifacts.plex.tv
   - DOMAIN-SUFFIX,images.plex.tv
   - DOMAIN-SUFFIX,cpms.svc.plex.tv
+  # =========================================
+  # 5. Gemini 与 Google 静态资源 (图片/模板加载)
+  # =========================================
+  - DOMAIN-SUFFIX,googleusercontent.com
+  - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-KEYWORD,gemini
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com
+  - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
