@@ -1,11 +1,9 @@
 payload:
   # =========================================
-  # 1. 强制锁美区的流媒体补丁 (Pluto & Tubi & Plex)
+  # 1. 流媒体精准后缀 (剔除了会导致大范围误伤的 KEYWORD)
   # =========================================
   - DOMAIN-SUFFIX,pluto.tv
   - DOMAIN-SUFFIX,plutotv.net
-  - DOMAIN-KEYWORD,pluto
-  - DOMAIN-KEYWORD,plutotv
   - DOMAIN-SUFFIX,pluto.tv.edgekey.net
   - DOMAIN-SUFFIX,pluto-cdn.pluto.tv
   - DOMAIN-SUFFIX,pluto-vod.pluto.tv
@@ -19,7 +17,6 @@ payload:
   - DOMAIN-SUFFIX,tubitv.com
   - DOMAIN-SUFFIX,tubi.io
   - DOMAIN-SUFFIX,tubi.video
-  - DOMAIN-KEYWORD,tubi
   - DOMAIN-SUFFIX,tubi.akamaized.net
   - DOMAIN-SUFFIX,tubi-cdn.akamaized.net
   - DOMAIN-SUFFIX,tubi-video.akamaized.net
@@ -30,44 +27,41 @@ payload:
   - DOMAIN-SUFFIX,player.tubitv.com
   - DOMAIN-SUFFIX,fastly.tubi.video
   - DOMAIN-SUFFIX,plex.tv
-  - DOMAIN-SUFFIX,metadata.provider.plex.tv
-  - DOMAIN-SUFFIX,analytics.plex.tv
-  - DOMAIN-SUFFIX,metadata-static.plex.tv
-  - DOMAIN-SUFFIX,meta.plex.tv
   - DOMAIN-SUFFIX,plex.direct
   - DOMAIN-SUFFIX,plex.bz
-  - DOMAIN-SUFFIX,plexapp.com
-  - DOMAIN-SUFFIX,artifacts.plex.tv
-  - DOMAIN-SUFFIX,images.plex.tv
-  - DOMAIN-SUFFIX,cpms.svc.plex.tv
 
   # =========================================
-  # 2. Gemini 与 Google AI 核心接口 (含隐蔽 API)
+  # 2. Gemini 与 Google AI 核心锁区
   # =========================================
-  - DOMAIN-SUFFIX,gstatic.com
-  - DOMAIN-SUFFIX,ggpht.com
   - DOMAIN-SUFFIX,gemini.google.com
-  - DOMAIN-KEYWORD,gemini
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
   - DOMAIN-SUFFIX,alkalimakersuite-pa.googleapis.com
-  - DOMAIN-SUFFIX,alkali.googleapis.com         # [补全] MakerSuite/Gemini 开发者接口
+  - DOMAIN-SUFFIX,alkali.googleapis.com
   - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
-  - DOMAIN-SUFFIX,aida.googleapis.com           # [补全] Gemini Advanced 高级推理接口
-  - DOMAIN-SUFFIX,aiplatform.googleapis.com     # [补全] Vertex AI 底层后端 (Gemini 核心)
-  - DOMAIN-SUFFIX,speech-pa.googleapis.com      # [补全] Gemini App 语音对话 PA 接口
-  - DOMAIN-SUFFIX,speech.googleapis.com         # [补全] 基础语音识别
-  - DOMAIN-SUFFIX,gemini-app.googleapis.com     # [补全] 移动端独立 App 专属 API
-  - DOMAIN-SUFFIX,lens.googleapis.com           # [补全] 视觉识别/图像分析 API
-  - DOMAIN-SUFFIX,one.google.com                # [补全] Gemini Advanced 订阅鉴权
+  - DOMAIN-SUFFIX,aida.googleapis.com
+  - DOMAIN-SUFFIX,aiplatform.googleapis.com
+  - DOMAIN-SUFFIX,speech-pa.googleapis.com
+  - DOMAIN-SUFFIX,speech.googleapis.com
+  - DOMAIN-SUFFIX,gemini-app.googleapis.com
+  - DOMAIN-SUFFIX,lens.googleapis.com
   - DOMAIN-SUFFIX,deepmind.google
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,ai.google.dev
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN-SUFFIX,one.google.com
 
   # =========================================
-  # 3. Meta AI / Oculus / 智能硬件 (含底层长连接/推送)
+  # 3. Microsoft Copilot / New Bing 防屏蔽
+  # =========================================
+  - DOMAIN-SUFFIX,copilot.microsoft.com
+  - DOMAIN-SUFFIX,sydney.bing.com
+  - DOMAIN-SUFFIX,edgeservices.bing.com
+  - DOMAIN-SUFFIX,gateway.bing.com
+
+  # =========================================
+  # 4. Meta AI / 硬件与长连接 (强制锁美区防掉线)
   # =========================================
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
@@ -81,23 +75,22 @@ payload:
   - DOMAIN-SUFFIX,whatsapp.com
   - DOMAIN-SUFFIX,whatsapp.net
   - DOMAIN-SUFFIX,threads.net
-  - DOMAIN-KEYWORD,metaai
   - DOMAIN-SUFFIX,graph.facebook.com
   - DOMAIN-SUFFIX,graph.meta.com
-  - DOMAIN-SUFFIX,graphql.meta.com              # [补全] Meta AI 核心 GraphQL 数据交互
+  - DOMAIN-SUFFIX,graphql.meta.com
   - DOMAIN-SUFFIX,graph.oculus.com
-  - DOMAIN-SUFFIX,b-api.facebook.com            # [补全] Meta 深度后台 API
-  - DOMAIN-SUFFIX,b-graph.facebook.com          # [补全] Meta 深度后台 Graph
-  - DOMAIN-SUFFIX,mqtt-mini.facebook.com        # [补全] Meta AI / WhatsApp 长连接推送
-  - DOMAIN-SUFFIX,edge-mqtt.facebook.com        # [补全] 边缘推送节点
-  - DOMAIN-SUFFIX,star.c10r.facebook.com        # [补全] Meta 硬件防穿透掉线节点
-  - DOMAIN-SUFFIX,mqtt.c10r.facebook.com        # [补全] MQTT 核心通信
+  - DOMAIN-SUFFIX,b-api.facebook.com
+  - DOMAIN-SUFFIX,b-graph.facebook.com
+  - DOMAIN-SUFFIX,mqtt-mini.facebook.com
+  - DOMAIN-SUFFIX,edge-mqtt.facebook.com
+  - DOMAIN-SUFFIX,star.c10r.facebook.com
+  - DOMAIN-SUFFIX,mqtt.c10r.facebook.com
   - DOMAIN-SUFFIX,imagine.meta.com
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
   - DOMAIN-SUFFIX,facebook.net
   - DOMAIN-SUFFIX,oculuscdn.com
-  - DOMAIN-SUFFIX,securecdn.oculus.com          # [补全] 头显固件与受保护资源下载
+  - DOMAIN-SUFFIX,securecdn.oculus.com
   - DOMAIN-SUFFIX,fbsbx.com
   - DOMAIN-SUFFIX,fbsbx.net
   - DOMAIN-SUFFIX,cdninstagram.com
@@ -110,11 +103,9 @@ payload:
   - DOMAIN-SUFFIX,internalfb.com
 
   # =========================================
-  # 4. VPN by Google / Pixel 底层 (含 RCS 与鉴权)
+  # 5. VPN by Google / Pixel 底层
   # =========================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
-  - DOMAIN-KEYWORD,google-vpn
-  - DOMAIN-KEYWORD,cloud-vpn
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
   - DOMAIN-SUFFIX,clientservices.googleapis.com
   - DOMAIN-SUFFIX,blind-rsa.googleapis.com
@@ -125,7 +116,5 @@ payload:
   - DOMAIN-SUFFIX,cloudproxy-pa.googleapis.com
   - DOMAIN-SUFFIX,fastpair.googleapis.com
   - DOMAIN-SUFFIX,carrierfi.googleapis.com
-  - DOMAIN-SUFFIX,telephony.goog                # [补全] Pixel RCS 信息与网络鉴权
-  - DOMAIN-SUFFIX,fi.google.com                 # [补全] Google Fi 鉴权 (影响部分底层网络)
-  - DOMAIN-SUFFIX,oauth2.googleapis.com
-  - DOMAIN-SUFFIX,accounts.google.com
+  - DOMAIN-SUFFIX,telephony.goog
+  - DOMAIN-SUFFIX,fi.google.com
