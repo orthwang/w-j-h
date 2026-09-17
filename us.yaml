@@ -64,7 +64,7 @@ payload:
   - DOMAIN-SUFFIX,cpms.svc.plex.tv
 
   # =========================================
-  # 5. Gemini 与 Google 静态资源 (图片/模板加载)
+  # 5. Gemini 与 Google AI底层接口 (系统级调用与防屏蔽)
   # =========================================
   - DOMAIN-SUFFIX,googleusercontent.com
   - DOMAIN-SUFFIX,gstatic.com
@@ -73,9 +73,14 @@ payload:
   - DOMAIN-KEYWORD,gemini
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+  - DOMAIN-SUFFIX,alkalimakersuite-pa.googleapis.com
+  - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
+  - DOMAIN-SUFFIX,deepmind.google
+  - DOMAIN-SUFFIX,deepmind.com
+  - DOMAIN-SUFFIX,ai.google.dev
 
   # =========================================
-  # 6. Meta / Meta AI / Oculus 核心域名与 CDN
+  # 6. Meta / Meta AI / Oculus 核心域名、CDN 与 API 网关
   # =========================================
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
@@ -86,6 +91,10 @@ payload:
   - DOMAIN-SUFFIX,fbsbx.com
   - DOMAIN-SUFFIX,threads.net
   - DOMAIN-KEYWORD,metaai
+  - DOMAIN-SUFFIX,graph.facebook.com
+  - DOMAIN-SUFFIX,graph.meta.com
+  - DOMAIN-SUFFIX,graph.oculus.com
+  - DOMAIN-SUFFIX,cdninstagram.com
   - GEOSITE,facebook
   - GEOSITE,meta
   - GEOSITE,instagram
