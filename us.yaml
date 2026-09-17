@@ -20,7 +20,6 @@ payload:
   - DOMAIN-SUFFIX,plutotv.net
   - DOMAIN-KEYWORD,pluto
   - DOMAIN-KEYWORD,plutotv
-  # --- Pluto CDN / API 深度补全 ---
   - DOMAIN-SUFFIX,pluto.tv.edgekey.net
   - DOMAIN-SUFFIX,pluto-cdn.pluto.tv
   - DOMAIN-SUFFIX,pluto-vod.pluto.tv
@@ -39,7 +38,6 @@ payload:
   - DOMAIN-SUFFIX,tubi.io
   - DOMAIN-SUFFIX,tubi.video
   - DOMAIN-KEYWORD,tubi
-  # --- Tubi CDN / API 深度补全 ---
   - DOMAIN-SUFFIX,tubi.akamaized.net
   - DOMAIN-SUFFIX,tubi-cdn.akamaized.net
   - DOMAIN-SUFFIX,tubi-video.akamaized.net
@@ -58,20 +56,38 @@ payload:
   - DOMAIN-SUFFIX,analytics.plex.tv
   - DOMAIN-SUFFIX,metadata-static.plex.tv
   - DOMAIN-SUFFIX,meta.plex.tv
-  # --- Plex CDN / API 深度补全 ---
   - DOMAIN-SUFFIX,plex.direct
   - DOMAIN-SUFFIX,plex.bz
   - DOMAIN-SUFFIX,plexapp.com
   - DOMAIN-SUFFIX,artifacts.plex.tv
   - DOMAIN-SUFFIX,images.plex.tv
   - DOMAIN-SUFFIX,cpms.svc.plex.tv
+
   # =========================================
-  # 5. Gemini 与 Google 静态资源 (图片/模板加载)
-  # =========================================
-  - DOMAIN-SUFFIX,googleusercontent.com
-  - DOMAIN-SUFFIX,gstatic.com
-  - DOMAIN-SUFFIX,ggpht.com
-  - DOMAIN-SUFFIX,gemini.google.com
-  - DOMAIN-KEYWORD,gemini
-  - DOMAIN-SUFFIX,generativelanguage.googleapis.com
-  - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+  # 5. Gemini 与 Google 静态资源 (图片/模板加载)
+  # =========================================
+  - DOMAIN-SUFFIX,googleusercontent.com
+  - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-KEYWORD,gemini
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com
+  - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+
+  # =========================================
+  # 6. Meta / Meta AI / Oculus 核心域名与 CDN
+  # =========================================
+  - DOMAIN-SUFFIX,meta.ai
+  - DOMAIN-SUFFIX,meta.com
+  - DOMAIN-SUFFIX,imagine.meta.com
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,fbsbx.com
+  - DOMAIN-SUFFIX,threads.net
+  - DOMAIN-KEYWORD,metaai
+  - GEOSITE,facebook
+  - GEOSITE,meta
+  - GEOSITE,instagram
+  - GEOSITE,whatsapp
+  - GEOSITE,oculus
