@@ -1,20 +1,6 @@
 payload:
   # =========================================
-  # 1. Google Play 下载与核心 API
-  # =========================================
-  - DOMAIN-SUFFIX,googleapis.cn
-  - DOMAIN-SUFFIX,googleapis.com
-  - DOMAIN-SUFFIX,services.googleapis.cn
-  - DOMAIN-SUFFIX,play-fe.googleapis.com
-  - DOMAIN-SUFFIX,play.googleapis.com
-  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-  - DOMAIN-KEYWORD,xn--ngstr-lra8j
-  - DOMAIN-SUFFIX,xn--ngstr-cn-8za9o.com
-  - DOMAIN-SUFFIX,gvt1.com
-  - DOMAIN-SUFFIX,gvt2.com
-
-  # =========================================
-  # 2. Pluto TV 
+  # 1. 强制锁美区的流媒体补丁 (Pluto & Tubi & Plex)
   # =========================================
   - DOMAIN-SUFFIX,pluto.tv
   - DOMAIN-SUFFIX,plutotv.net
@@ -30,10 +16,6 @@ payload:
   - DOMAIN-SUFFIX,pluto.akamaized.net
   - DOMAIN-SUFFIX,pluto-vod.akamaized.net
   - DOMAIN-SUFFIX,pluto-live.akamaized.net
-
-  # =========================================
-  # 3. Tubi TV
-  # =========================================
   - DOMAIN-SUFFIX,tubitv.com
   - DOMAIN-SUFFIX,tubi.io
   - DOMAIN-SUFFIX,tubi.video
@@ -47,10 +29,6 @@ payload:
   - DOMAIN-SUFFIX,images.tubitv.com
   - DOMAIN-SUFFIX,player.tubitv.com
   - DOMAIN-SUFFIX,fastly.tubi.video
-
-  # =========================================
-  # 4. Plex (刮削、元数据与服务验证)
-  # =========================================
   - DOMAIN-SUFFIX,plex.tv
   - DOMAIN-SUFFIX,metadata.provider.plex.tv
   - DOMAIN-SUFFIX,analytics.plex.tv
@@ -64,7 +42,7 @@ payload:
   - DOMAIN-SUFFIX,cpms.svc.plex.tv
 
   # =========================================
-  # 5. Gemini 与 Google AI 底层接口
+  # 2. Gemini 与 Google AI 核心接口 (防封禁热补丁)
   # =========================================
   - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,ggpht.com
@@ -79,14 +57,14 @@ payload:
   - DOMAIN-SUFFIX,ai.google.dev
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,bard.google.com
-  
+
   # =========================================
-  # 6. Meta / Meta AI / Oculus / 社交全家桶 (纯域名化防漏网)
+  # 3. Meta AI / Oculus / 智能硬件语音专线 (防漏网补丁)
   # =========================================
-  # 基础主站与短链
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
   - DOMAIN-SUFFIX,meta.me
+  - DOMAIN-SUFFIX,metademolab.com
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,fb.com
   - DOMAIN-SUFFIX,fb.me
@@ -96,11 +74,9 @@ payload:
   - DOMAIN-SUFFIX,whatsapp.net
   - DOMAIN-SUFFIX,threads.net
   - DOMAIN-KEYWORD,metaai
-  # 核心 API 网关
   - DOMAIN-SUFFIX,graph.facebook.com
   - DOMAIN-SUFFIX,graph.meta.com
   - DOMAIN-SUFFIX,graph.oculus.com
-  # 静态资源与媒体下发 CDN
   - DOMAIN-SUFFIX,imagine.meta.com
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
@@ -111,14 +87,14 @@ payload:
   - DOMAIN-SUFFIX,cdninstagram.com
   - DOMAIN-SUFFIX,metacdn.com
   - DOMAIN-SUFFIX,metacdn.net
-  # 智能穿戴、Quest 语音引擎与硬件专有网络 (决定能否使用语音功能的命脉)
   - DOMAIN-SUFFIX,wit.ai
   - DOMAIN-SUFFIX,tfbnw.net
   - DOMAIN-SUFFIX,oculusvr.com
   - DOMAIN-SUFFIX,facebook-hardware.com
+  - DOMAIN-SUFFIX,internalfb.com
 
   # =========================================
-  # 7. VPN by Google (Pixel 鉴权与网关)
+  # 4. VPN by Google (Pixel 鉴权与网关，必须全走美区)
   # =========================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-KEYWORD,google-vpn
