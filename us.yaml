@@ -81,21 +81,12 @@ payload:
   - DOMAIN-SUFFIX,bard.google.com
   
   # =========================================
-  # 6. Meta / Meta AI / Oculus / 社交全家桶 (纯域名化，杜绝 geosite 依赖)
+  # 6. Meta / Meta AI / Oculus / 社交全家桶 (纯域名化防漏网)
   # =========================================
+  # 基础主站与短链
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
-  - DOMAIN-SUFFIX,imagine.meta.com
-  - DOMAIN-SUFFIX,fbcdn.net
-  - DOMAIN-SUFFIX,facebook.net
-  - DOMAIN-SUFFIX,oculuscdn.com
-  - DOMAIN-SUFFIX,fbsbx.com
-  - DOMAIN-SUFFIX,threads.net
-  - DOMAIN-KEYWORD,metaai
-  - DOMAIN-SUFFIX,graph.facebook.com
-  - DOMAIN-SUFFIX,graph.meta.com
-  - DOMAIN-SUFFIX,graph.oculus.com
-  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,meta.me
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,fb.com
   - DOMAIN-SUFFIX,fb.me
@@ -103,26 +94,44 @@ payload:
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,whatsapp.com
   - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,threads.net
+  - DOMAIN-KEYWORD,metaai
+  # 核心 API 网关
+  - DOMAIN-SUFFIX,graph.facebook.com
+  - DOMAIN-SUFFIX,graph.meta.com
+  - DOMAIN-SUFFIX,graph.oculus.com
+  # 静态资源与媒体下发 CDN
+  - DOMAIN-SUFFIX,imagine.meta.com
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,fbcdn.com
+  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,fbsbx.com
+  - DOMAIN-SUFFIX,fbsbx.net
+  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,metacdn.com
+  - DOMAIN-SUFFIX,metacdn.net
+  # 智能穿戴、Quest 语音引擎与硬件专有网络 (决定能否使用语音功能的命脉)
+  - DOMAIN-SUFFIX,wit.ai
+  - DOMAIN-SUFFIX,tfbnw.net
+  - DOMAIN-SUFFIX,oculusvr.com
+  - DOMAIN-SUFFIX,facebook-hardware.com
 
   # =========================================
-  # 7. VPN by Google (Pixel 内置专属全流程鉴权与网关)
+  # 7. VPN by Google (Pixel 鉴权与网关)
   # =========================================
-  # 服务发现、控制面与可用性核验
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-KEYWORD,google-vpn
   - DOMAIN-KEYWORD,cloud-vpn
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
   - DOMAIN-SUFFIX,clientservices.googleapis.com
-  # 匿名令牌握手、设备认证与盲签服务 (Blind-Sign)
   - DOMAIN-SUFFIX,blind-rsa.googleapis.com
   - DOMAIN-SUFFIX,phosphor-pa.googleapis.com
   - DOMAIN-SUFFIX,privacysandbox.googleapis.com
   - DOMAIN-SUFFIX,device-provisioning.googleapis.com
-  # 出口网关、隧道协商与中继端点 (Egress Proxies)
   - DOMAIN-SUFFIX,cloudproxy.googleapis.com
   - DOMAIN-SUFFIX,cloudproxy-pa.googleapis.com
   - DOMAIN-SUFFIX,fastpair.googleapis.com
   - DOMAIN-SUFFIX,carrierfi.googleapis.com
-  # 底层依赖的 GMS 核心身份鉴权
   - DOMAIN-SUFFIX,oauth2.googleapis.com
   - DOMAIN-SUFFIX,accounts.google.com
