@@ -78,6 +78,9 @@ payload:
   - DOMAIN-SUFFIX,deepmind.google
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,ai.google.dev
+  # --- 本次兜底补全：Gemini API工作室与旧版重定向 ---
+  - DOMAIN-SUFFIX,aistudio.google.com
+  - DOMAIN-SUFFIX,bard.google.com
 
   # =========================================
   # 6. Meta / Meta AI / Oculus 核心域名、CDN 与 API 网关
@@ -95,6 +98,13 @@ payload:
   - DOMAIN-SUFFIX,graph.meta.com
   - DOMAIN-SUFFIX,graph.oculus.com
   - DOMAIN-SUFFIX,cdninstagram.com
+  # --- 本次兜底补全：强制声明根域名，防止 geosite 库滞后漏网 ---
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,fb.com
+  - DOMAIN-SUFFIX,fb.me
+  - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-SUFFIX,oculus.com
+  # ------------------------------------------------
   - GEOSITE,facebook
   - GEOSITE,meta
   - GEOSITE,instagram
