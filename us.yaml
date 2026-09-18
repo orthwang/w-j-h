@@ -1,7 +1,9 @@
 # version: 2026-09-18
+# description: US region lock patch
+
 payload:
   # =========================================
-  # 1. 流媒体精准后缀 (剔除泛 KEYWORD)
+  # 1. 流媒体精准后缀
   # =========================================
   - DOMAIN-SUFFIX,pluto.tv
   - DOMAIN-SUFFIX,plutotv.net
@@ -62,7 +64,7 @@ payload:
   - DOMAIN-SUFFIX,gateway.bing.com
 
   # =========================================
-  # 4. Meta AI / 硬件与长连接 (防锁区断连)
+  # 4. Meta AI / 硬件与长连接
   # =========================================
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
@@ -86,7 +88,8 @@ payload:
   - DOMAIN-SUFFIX,edge-mqtt.facebook.com
   - DOMAIN-SUFFIX,star.c10r.facebook.com
   - DOMAIN-SUFFIX,mqtt.c10r.facebook.com
-  - DOMAIN-SUFFIX,mqtt.facebook.com         # [补全] 主域名长连接
+  - DOMAIN-SUFFIX,mqtt.facebook.com
+  - DOMAIN-SUFFIX,mqtt.fb.com
   - DOMAIN-SUFFIX,imagine.meta.com
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
@@ -105,10 +108,12 @@ payload:
   - DOMAIN-SUFFIX,internalfb.com
 
   # =========================================
-  # 5. VPN by Google / Pixel 底层
+  # 5. VPN by Google / Pixel 底层探测
   # =========================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
+  - DOMAIN-SUFFIX,connectivitycheck.android.com
+  - DOMAIN-SUFFIX,android.clients.google.com
   - DOMAIN-SUFFIX,clientservices.googleapis.com
   - DOMAIN-SUFFIX,blind-rsa.googleapis.com
   - DOMAIN-SUFFIX,phosphor-pa.googleapis.com
