@@ -1,6 +1,7 @@
+# version: 2026-09-18
 payload:
   # =========================================
-  # 1. 流媒体精准后缀 (剔除了会导致大范围误伤的 KEYWORD)
+  # 1. 流媒体精准后缀 (剔除泛 KEYWORD)
   # =========================================
   - DOMAIN-SUFFIX,pluto.tv
   - DOMAIN-SUFFIX,plutotv.net
@@ -31,7 +32,7 @@ payload:
   - DOMAIN-SUFFIX,plex.bz
 
   # =========================================
-  # 2. Gemini 与 Google AI 核心锁区
+  # 2. Gemini 与 Google AI 核心接口
   # =========================================
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
@@ -53,7 +54,7 @@ payload:
   - DOMAIN-SUFFIX,one.google.com
 
   # =========================================
-  # 3. Microsoft Copilot / New Bing 防屏蔽
+  # 3. Microsoft Copilot / New Bing
   # =========================================
   - DOMAIN-SUFFIX,copilot.microsoft.com
   - DOMAIN-SUFFIX,sydney.bing.com
@@ -61,7 +62,7 @@ payload:
   - DOMAIN-SUFFIX,gateway.bing.com
 
   # =========================================
-  # 4. Meta AI / 硬件与长连接 (强制锁美区防掉线)
+  # 4. Meta AI / 硬件与长连接 (防锁区断连)
   # =========================================
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
@@ -85,6 +86,7 @@ payload:
   - DOMAIN-SUFFIX,edge-mqtt.facebook.com
   - DOMAIN-SUFFIX,star.c10r.facebook.com
   - DOMAIN-SUFFIX,mqtt.c10r.facebook.com
+  - DOMAIN-SUFFIX,mqtt.facebook.com         # [补全] 主域名长连接
   - DOMAIN-SUFFIX,imagine.meta.com
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
