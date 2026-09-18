@@ -1,9 +1,9 @@
 # version: 2026-09-18
-# description: US region lock patch
+# description: US region lock patch for AI / Meta / Pixel / Streaming
 
 payload:
   # =========================================
-  # 1. 流媒体精准后缀
+  # 1. 流媒体精准后缀 (剔除泛 KEYWORD)
   # =========================================
   - DOMAIN-SUFFIX,pluto.tv
   - DOMAIN-SUFFIX,plutotv.net
@@ -30,7 +30,6 @@ payload:
   - DOMAIN-SUFFIX,player.tubitv.com
   - DOMAIN-SUFFIX,fastly.tubi.video
   - DOMAIN-SUFFIX,plex.tv
-  - DOMAIN-SUFFIX,plex.direct
   - DOMAIN-SUFFIX,plex.bz
 
   # =========================================
@@ -64,7 +63,7 @@ payload:
   - DOMAIN-SUFFIX,gateway.bing.com
 
   # =========================================
-  # 4. Meta AI / 硬件与长连接
+  # 4. Meta AI / 硬件与全量长连接
   # =========================================
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
@@ -108,7 +107,7 @@ payload:
   - DOMAIN-SUFFIX,internalfb.com
 
   # =========================================
-  # 5. VPN by Google / Pixel 底层探测
+  # 5. VPN by Google / Pixel 底层探测锁定
   # =========================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
