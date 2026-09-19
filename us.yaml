@@ -1,10 +1,21 @@
-# version: 2026-09-18
-# description: US region lock patch for AI / Meta / Pixel / Streaming
+# version: 2026-09-19
+# description: US region lock patch
 
 payload:
-  # =========================================
-  # 1. 流媒体精准后缀 (剔除泛 KEYWORD)
-  # =========================================
+  # =======================================================
+  # 1. 强锁美区流媒体 (Sling TV / Pluto TV / Tubi TV / Plex)
+  #    包含全量主站、播放流调度、认证鉴权及第三方 CDN 节点
+  # =======================================================
+  # --- Sling TV 全量生态 ---
+  - DOMAIN-SUFFIX,sling.com
+  - DOMAIN-SUFFIX,dishworld.com
+  - DOMAIN-SUFFIX,movetv.com
+  - DOMAIN-SUFFIX,slingcdn.com
+  - DOMAIN-SUFFIX,movenetworks.com
+  - DOMAIN-SUFFIX,p-geo.movetv.com
+  - DOMAIN-SUFFIX,linear-origin.movetv.com
+
+  # --- Pluto TV 全量生态 (含第三方 Akamai 边缘分发) ---
   - DOMAIN-SUFFIX,pluto.tv
   - DOMAIN-SUFFIX,plutotv.net
   - DOMAIN-SUFFIX,pluto.tv.edgekey.net
@@ -14,29 +25,37 @@ payload:
   - DOMAIN-SUFFIX,pluto-linear.pluto.tv
   - DOMAIN-SUFFIX,pluto-prod.pluto.tv
   - DOMAIN-SUFFIX,pluto-stitcher.pluto.tv
+  - DOMAIN-SUFFIX,api.pluto.tv
+  - DOMAIN-SUFFIX,siloh.pluto.tv
+  - DOMAIN-SUFFIX,service-stitcher.clusters.pluto.tv
   - DOMAIN-SUFFIX,pluto.akamaized.net
   - DOMAIN-SUFFIX,pluto-vod.akamaized.net
   - DOMAIN-SUFFIX,pluto-live.akamaized.net
+
+  # --- Tubi TV 全量生态 (含 Fastly 与 Akamai 视频流节点) ---
   - DOMAIN-SUFFIX,tubitv.com
   - DOMAIN-SUFFIX,tubi.io
   - DOMAIN-SUFFIX,tubi.video
-  - DOMAIN-SUFFIX,tubi.akamaized.net
+  - DOMAIN-SUFFIX,api.tubitv.com
+  - DOMAIN-SUFFIX,images.tubitv.com
+  - DOMAIN-SUFFIX,player.tubitv.com
   - DOMAIN-SUFFIX,tubi-cdn.akamaized.net
   - DOMAIN-SUFFIX,tubi-video.akamaized.net
   - DOMAIN-SUFFIX,tubi-vod.akamaized.net
   - DOMAIN-SUFFIX,tubi-linear.akamaized.net
-  - DOMAIN-SUFFIX,api.tubitv.com
-  - DOMAIN-SUFFIX,images.tubitv.com
-  - DOMAIN-SUFFIX,player.tubitv.com
+  - DOMAIN-SUFFIX,tubi.akamaized.net
   - DOMAIN-SUFFIX,fastly.tubi.video
-  - DOMAIN-SUFFIX,plex.tv
-  - DOMAIN-SUFFIX,plex.bz
 
-  # =========================================
-  # 2. Gemini 与 Google AI 核心接口
-  # =========================================
+  # --- Plex 平台 (仅保留官方云端服务与认证，杜绝劫持本地 NAS 串流) ---
+  - DOMAIN-SUFFIX,plex.tv
+
+  # =======================================================
+  # 2. Gemini / Google AI / Labs / 生态独立接口
+  #    包含实时语音 WebSocket、多模态及 Labs 实验生态
+  # =======================================================
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
+  - DOMAIN-SUFFIX,generativelanguage-pa.googleapis.com
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
   - DOMAIN-SUFFIX,alkalimakersuite-pa.googleapis.com
   - DOMAIN-SUFFIX,alkali.googleapis.com
@@ -47,24 +66,33 @@ payload:
   - DOMAIN-SUFFIX,speech.googleapis.com
   - DOMAIN-SUFFIX,gemini-app.googleapis.com
   - DOMAIN-SUFFIX,lens.googleapis.com
-  - DOMAIN-SUFFIX,deepmind.google
-  - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,ai.google.dev
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,one.google.com
+  - DOMAIN-SUFFIX,labs.google
+  - DOMAIN-SUFFIX,notebooklm.google
+  - DOMAIN-SUFFIX,deepmind.google
+  - DOMAIN-SUFFIX,deepmind.goog
+  - DOMAIN-SUFFIX,deepmind.com
 
-  # =========================================
-  # 3. Microsoft Copilot / New Bing
-  # =========================================
+  # =======================================================
+  # 3. Microsoft Copilot / New Bing / Designer
+  #    包含客户端分发、会话网关与绘图后端
+  # =======================================================
   - DOMAIN-SUFFIX,copilot.microsoft.com
+  - DOMAIN-SUFFIX,copilot.azure.com
+  - DOMAIN-SUFFIX,copilot.azureedge.net
+  - DOMAIN-SUFFIX,designer.microsoft.com
   - DOMAIN-SUFFIX,sydney.bing.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
   - DOMAIN-SUFFIX,gateway.bing.com
 
-  # =========================================
-  # 4. Meta AI / 硬件与全量长连接
-  # =========================================
+  # =======================================================
+  # 4. Meta AI / 硬件生态 (Quest 3 & Ray-Ban) / 全量长连接
+  #    全要素展开：模型推理、生图、动态配置下发、MQTT、WebRTC
+  # =======================================================
+  # --- 根域与主体独立业务 ---
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,meta.com
   - DOMAIN-SUFFIX,meta.me
@@ -74,22 +102,48 @@ payload:
   - DOMAIN-SUFFIX,fb.me
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,oculus.com
+  - DOMAIN-SUFFIX,oculusvr.com
   - DOMAIN-SUFFIX,whatsapp.com
   - DOMAIN-SUFFIX,whatsapp.net
   - DOMAIN-SUFFIX,threads.net
+  - DOMAIN-SUFFIX,messenger.com
+  - DOMAIN-SUFFIX,m.me
+  - DOMAIN-SUFFIX,wa.me
+  - DOMAIN-SUFFIX,rayban.com
+  - DOMAIN-SUFFIX,ray-ban.com
+  - DOMAIN-SUFFIX,wit.ai
+  - DOMAIN-SUFFIX,facebook-hardware.com
+  - DOMAIN-SUFFIX,internalfb.com
+
+  # --- AI 核心推理、多模态传输与独立模型入口 ---
+  - DOMAIN-SUFFIX,llama.com
+  - DOMAIN-SUFFIX,ai.meta.com
+  - DOMAIN-SUFFIX,imagine.meta.com
+  - DOMAIN-SUFFIX,rupload.facebook.com
+  - DOMAIN-SUFFIX,api.whatsapp.com
+  - DOMAIN-SUFFIX,api.instagram.com
+
+  # --- 接口、GraphQL 与远程动态配置下发 (掌控语言与 AI 功能开关) ---
   - DOMAIN-SUFFIX,graph.facebook.com
   - DOMAIN-SUFFIX,graph.meta.com
   - DOMAIN-SUFFIX,graphql.meta.com
   - DOMAIN-SUFFIX,graph.oculus.com
   - DOMAIN-SUFFIX,b-api.facebook.com
   - DOMAIN-SUFFIX,b-graph.facebook.com
+  - DOMAIN-SUFFIX,b-static.facebook.com
+  - DOMAIN-SUFFIX,lookaside.facebook.com
+  - DOMAIN-SUFFIX,lookaside.fbsbx.com
+  - DOMAIN-SUFFIX,intern.facebook.com
+
+  # --- 全量 MQTT 长连接与心跳通知 (防锁区掉线) ---
   - DOMAIN-SUFFIX,mqtt-mini.facebook.com
   - DOMAIN-SUFFIX,edge-mqtt.facebook.com
   - DOMAIN-SUFFIX,star.c10r.facebook.com
   - DOMAIN-SUFFIX,mqtt.c10r.facebook.com
   - DOMAIN-SUFFIX,mqtt.facebook.com
   - DOMAIN-SUFFIX,mqtt.fb.com
-  - DOMAIN-SUFFIX,imagine.meta.com
+
+  # --- Meta 独立 CDN 媒体资源与硬件服务集群 ---
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
   - DOMAIN-SUFFIX,facebook.net
@@ -100,15 +154,12 @@ payload:
   - DOMAIN-SUFFIX,cdninstagram.com
   - DOMAIN-SUFFIX,metacdn.com
   - DOMAIN-SUFFIX,metacdn.net
-  - DOMAIN-SUFFIX,wit.ai
   - DOMAIN-SUFFIX,tfbnw.net
-  - DOMAIN-SUFFIX,oculusvr.com
-  - DOMAIN-SUFFIX,facebook-hardware.com
-  - DOMAIN-SUFFIX,internalfb.com
 
-  # =========================================
+  # =======================================================
   # 5. VPN by Google / Pixel 底层探测锁定
-  # =========================================
+  #    包含系统连通性握手、云端代理与加密凭据服务
+  # =======================================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
   - DOMAIN-SUFFIX,connectivitycheck.android.com
