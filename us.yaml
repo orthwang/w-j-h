@@ -1,9 +1,9 @@
 # version: 2026-09-20
-# description: US region lock patch (Original 48 + 9 Copilot rules = 57 rules)
+# description: US region lock patch (Office Substrate & Copilot Fix)
 
 payload:
   # =======================================================
-  # 1. 流媒体与基础服务 (原版 4 条)
+  # 1. 流媒体与基础服务 (4 条)
   # =======================================================
   - DOMAIN-SUFFIX,sling.com
   - DOMAIN-SUFFIX,pluto.tv
@@ -11,7 +11,7 @@ payload:
   - DOMAIN-SUFFIX,plex.tv
 
   # =======================================================
-  # 2. Gemini / Google AI / Labs (原版 20 条)
+  # 2. Gemini / Google AI / Labs (20 条)
   # =======================================================
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
@@ -35,9 +35,9 @@ payload:
   - DOMAIN-SUFFIX,deepmind.com
 
   # =======================================================
-  # 3. Microsoft Copilot & 核心鉴权 (原版 7 条 + 新增 9 条 = 共 16 条)
+  # 3. Microsoft Copilot & 核心鉴权包 (彻底拦截截图中的直连流量)
   # =======================================================
-  # --- 原版 7 条 ---
+  # --- Copilot 专属入口与会话网关 ---
   - DOMAIN-SUFFIX,copilot.microsoft.com
   - DOMAIN-SUFFIX,copilot.azure.com
   - DOMAIN-SUFFIX,copilot.azureedge.net
@@ -45,10 +45,15 @@ payload:
   - DOMAIN-SUFFIX,sydney.bing.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
   - DOMAIN-SUFFIX,gateway.bing.com
-
-  # --- 新增 9 条：Bing 接口与微软登录鉴权（防 DIRECT 干扰）---
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,bingapis.com
+
+  # --- 截图中暴露的 Copilot 核心后端与通信管道（防 DIRECT 漏流）---
+  - DOMAIN-SUFFIX,substrate.office.com
+  - DOMAIN-SUFFIX,office.net
+  - DOMAIN-SUFFIX,graph.microsoft.com
+
+  # --- 微软账号登录鉴权链路 ---
   - DOMAIN-SUFFIX,login.live.com
   - DOMAIN-SUFFIX,login.microsoftonline.com
   - DOMAIN-SUFFIX,account.live.com
@@ -58,13 +63,13 @@ payload:
   - DOMAIN-SUFFIX,msauthimages.net
 
   # =======================================================
-  # 4. Meta AI / Threads (原版 2 条)
+  # 4. Meta AI / Threads (2 条)
   # =======================================================
   - DOMAIN-SUFFIX,imagine.meta.com
   - DOMAIN-SUFFIX,threads.net
 
   # =======================================================
-  # 5. VPN by Google / Pixel 底层探测 (原版 15 条)
+  # 5. VPN by Google / Pixel 底层探测锁定 (15 条)
   # =======================================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
