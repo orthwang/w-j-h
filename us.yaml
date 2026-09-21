@@ -1,17 +1,19 @@
-# version: 2026-09-20
-# description: US region lock patch (Office Substrate & Copilot Fix)
+# version: 2026-09-21
+# description: US region lock & Comprehensive AI patch (Meta Ecosystem + Office + Google + Streaming)
+# repository: orthwang/w-j-h/us.yaml
 
 payload:
   # =======================================================
-  # 1. 流媒体与基础服务 (4 条)
+  # 1. 强锁美区流媒体与基础服务
   # =======================================================
   - DOMAIN-SUFFIX,sling.com
   - DOMAIN-SUFFIX,pluto.tv
   - DOMAIN-SUFFIX,tubitv.com
   - DOMAIN-SUFFIX,plex.tv
+  - DOMAIN-SUFFIX,peacocktv.com
 
   # =======================================================
-  # 2. Gemini / Google AI / Labs (20 条)
+  # 2. Gemini / Google AI / Labs (核心锁美区链)
   # =======================================================
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
@@ -33,12 +35,14 @@ payload:
   - DOMAIN-SUFFIX,labs.google
   - DOMAIN-SUFFIX,notebooklm.google
   - DOMAIN-SUFFIX,deepmind.com
+  - DOMAIN-SUFFIX,deepmind.google
 
   # =======================================================
-  # 3. Microsoft Copilot & 核心鉴权包 (彻底拦截截图中的直连流量)
+  # 3. Microsoft Copilot & 核心鉴权包 (防 Direct 漏流与断流)
   # =======================================================
   # --- Copilot 专属入口与会话网关 ---
   - DOMAIN-SUFFIX,copilot.microsoft.com
+  - DOMAIN-SUFFIX,copilot.cloud.microsoft
   - DOMAIN-SUFFIX,copilot.azure.com
   - DOMAIN-SUFFIX,copilot.azureedge.net
   - DOMAIN-SUFFIX,designer.microsoft.com
@@ -48,7 +52,7 @@ payload:
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,bingapis.com
 
-  # --- 截图中暴露的 Copilot 核心后端与通信管道（防 DIRECT 漏流）---
+  # --- Copilot 核心通信管道与后端 ---
   - DOMAIN-SUFFIX,substrate.office.com
   - DOMAIN-SUFFIX,office.net
   - DOMAIN-SUFFIX,graph.microsoft.com
@@ -63,18 +67,67 @@ payload:
   - DOMAIN-SUFFIX,msauthimages.net
 
   # =======================================================
-  # 4. Meta AI / Threads (2 条)
+  # 4. Meta AI 与 Meta 全生态 (已剔除公共 CDN akamaihd.net)
   # =======================================================
+  # --- 核心主域名与官方资产 ---
+  - DOMAIN-SUFFIX,meta.ai
+  - DOMAIN-SUFFIX,metaai.com
+  - DOMAIN-SUFFIX,wit.ai
+  - DOMAIN-SUFFIX,metademolab.com
+  - DOMAIN-SUFFIX,meta.com
+  - DOMAIN-SUFFIX,atmeta.com
   - DOMAIN-SUFFIX,imagine.meta.com
   - DOMAIN-SUFFIX,threads.net
+  - DOMAIN-SUFFIX,fb.com
+  - DOMAIN-SUFFIX,fb.me
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,facebook.org
+  - DOMAIN-SUFFIX,tfbnw.net
+  - DOMAIN-SUFFIX,fb-messenger.com
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,messenger.com
+  - DOMAIN-SUFFIX,m.me
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,fbsbx.com
+  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-SUFFIX,oculus.com
+  - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,mapillary.com
+  - DOMAIN-SUFFIX,intern.facebook.com
+  - DOMAIN-SUFFIX,facebook.com.edgekey.net
+  - DOMAIN-SUFFIX,fbworkmail.com
+  - DOMAIN-SUFFIX,facebook-internal.com
+  - DOMAIN-SUFFIX,facebookvirtualassistant.com
+
+  # --- 特征拦截与动态通道 ---
+  - DOMAIN-KEYWORD,metaai
+  - DOMAIN-KEYWORD,ar-genai
+  - DOMAIN-KEYWORD,genai
+  - DOMAIN-KEYWORD,whatsapp
+  - DOMAIN-KEYWORD,edge-mqtt
+
+  # --- 关键接口 API ---
+  - DOMAIN,graph.facebook.com
+  - DOMAIN,b-api.facebook.com
+  - DOMAIN,b-graph.facebook.com
+  - DOMAIN,mqtt.c10r.facebook.com
+  - DOMAIN,mqtt-mini.facebook.com
+
+  # --- 核心 Meta ASN IP 段 (精简兜底) ---
+  - IP-CIDR,31.13.0.0/16,no-resolve
+  - IP-CIDR,66.220.144.0/20,no-resolve
+  - IP-CIDR,69.171.224.0/19,no-resolve
+  - IP-CIDR,129.134.0.0/17,no-resolve
+  - IP-CIDR,157.240.0.0/16,no-resolve
+  - IP-CIDR,173.252.64.0/18,no-resolve
 
   # =======================================================
-  # 5. VPN by Google / Pixel 底层探测锁定 (15 条)
+  # 5. VPN by Google / Pixel 专属特性底层 (已剔除普通连网检测)
   # =======================================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
-  - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
-  - DOMAIN-SUFFIX,connectivitycheck.android.com
-  - DOMAIN-SUFFIX,android.clients.google.com
   - DOMAIN-SUFFIX,clientservices.googleapis.com
   - DOMAIN-SUFFIX,blind-rsa.googleapis.com
   - DOMAIN-SUFFIX,phosphor-pa.googleapis.com
