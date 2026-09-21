@@ -1,5 +1,5 @@
-# version: 2026-09-19
-# description: US region lock patch
+# version: 2026-09-20
+# description: US region lock patch (Updated with Full Copilot & MS Auth Suite)
 
 payload:
   # =======================================================
@@ -77,16 +77,30 @@ payload:
   - DOMAIN-SUFFIX,deepmind.com
 
   # =======================================================
-  # 3. Microsoft Copilot / New Bing / Designer
-  #    包含客户端分发、会话网关与绘图后端
+  # 3. Microsoft Copilot / New Bing / Designer / 核心鉴权全量包
+  #    提前劫持并锁美区，防止因“微软服务”走 DIRECT 导致鉴权中断
   # =======================================================
+  # --- Copilot 专属入口与云端会话 ---
   - DOMAIN-SUFFIX,copilot.microsoft.com
   - DOMAIN-SUFFIX,copilot.azure.com
   - DOMAIN-SUFFIX,copilot.azureedge.net
   - DOMAIN-SUFFIX,designer.microsoft.com
+
+  # --- Sydney / Bing AI 会话与绘图网关 ---
   - DOMAIN-SUFFIX,sydney.bing.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
   - DOMAIN-SUFFIX,gateway.bing.com
+  - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,bingapis.com
+
+  # --- 微软统一登录、通行证与令牌认证 (关键依赖，防直连暴毙) ---
+  - DOMAIN-SUFFIX,login.live.com
+  - DOMAIN-SUFFIX,login.microsoftonline.com
+  - DOMAIN-SUFFIX,account.live.com
+  - DOMAIN-SUFFIX,account.microsoft.com
+  - DOMAIN-SUFFIX,auth.gfx.ms
+  - DOMAIN-SUFFIX,msauth.net
+  - DOMAIN-SUFFIX,msauthimages.net
 
   # =======================================================
   # 4. Meta AI / 硬件生态 (Quest 3 & Ray-Ban) / 全量长连接
