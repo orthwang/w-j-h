@@ -1,5 +1,5 @@
-# version: 2026-09-21
-# description: US region lock & Comprehensive AI patch (Meta Ecosystem + Office + Google + Streaming)
+# version: 2026-09-23
+# description: US region lock & Comprehensive AI patch (Meta Ecosystem + Copilot Cellular Optimized + Google + Streaming)
 # repository: orthwang/w-j-h/us.yaml
 
 payload:
@@ -38,9 +38,9 @@ payload:
   - DOMAIN-SUFFIX,deepmind.google
 
   # =======================================================
-  # 3. Microsoft Copilot & 核心鉴权包 (防 Direct 漏流与断流)
+  # 3. Microsoft Copilot & 移动端高频鉴权与调度链 (防漏流精简版)
   # =======================================================
-  # --- Copilot 专属入口与会话网关 ---
+  # --- Copilot 专属入口、会话网关与动态接口 ---
   - DOMAIN-SUFFIX,copilot.microsoft.com
   - DOMAIN-SUFFIX,copilot.cloud.microsoft
   - DOMAIN-SUFFIX,copilot.azure.com
@@ -48,16 +48,27 @@ payload:
   - DOMAIN-SUFFIX,designer.microsoft.com
   - DOMAIN-SUFFIX,sydney.bing.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
+  - DOMAIN-SUFFIX,edgeservices.bingapis.com
   - DOMAIN-SUFFIX,gateway.bing.com
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,bingapis.com
+  - DOMAIN-SUFFIX,services.bingapis.com
+  - DOMAIN-SUFFIX,r.bing.com
+  - DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
+  - DOMAIN-SUFFIX,copilot-assets.microsoft.com
+  - DOMAIN-SUFFIX,copilot-telemetry.microsoft.com
 
-  # --- Copilot 核心通信管道与后端 ---
+  # --- Copilot 核心后端与专属 Office CDN ---
   - DOMAIN-SUFFIX,substrate.office.com
   - DOMAIN-SUFFIX,office.net
+  - DOMAIN-SUFFIX,res.cdn.office.net
   - DOMAIN-SUFFIX,graph.microsoft.com
+  - DOMAIN-SUFFIX,graph.office.net
+  - DOMAIN-SUFFIX,odc.officeapps.live.com
+  - DOMAIN-SUFFIX,roaming.officeapps.live.com
+  - DOMAIN-SUFFIX,ai.azure.com
 
-  # --- 微软账号登录鉴权链路 ---
+  # --- 微软移动端鉴权链路 (OAuth / Entra / Token 刷新) ---
   - DOMAIN-SUFFIX,login.live.com
   - DOMAIN-SUFFIX,login.microsoftonline.com
   - DOMAIN-SUFFIX,account.live.com
@@ -65,6 +76,17 @@ payload:
   - DOMAIN-SUFFIX,auth.gfx.ms
   - DOMAIN-SUFFIX,msauth.net
   - DOMAIN-SUFFIX,msauthimages.net
+  - DOMAIN-SUFFIX,msftauth.net
+  - DOMAIN-SUFFIX,aadcdn.msauth.net
+  - DOMAIN-SUFFIX,aadcdn.msftauth.net
+  - DOMAIN-SUFFIX,logincdn.msauth.net
+  - DOMAIN-SUFFIX,login.windows.net
+  - DOMAIN-SUFFIX,device.login.microsoftonline.com
+
+  # --- 微软核心调度与流量中继 (Copilot 依赖) ---
+  - DOMAIN-SUFFIX,trafficmanager.net
+  - DOMAIN-SUFFIX,azureedge.net
+  - DOMAIN-SUFFIX,msecnd.net
 
   # =======================================================
   # 4. Meta AI 与 Meta 全生态 (已剔除公共 CDN akamaihd.net)
