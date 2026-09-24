@@ -1,0 +1,89 @@
+# repository: orthwang/w-j-h/meta.yaml
+# description: Meta Ecosystem Dedicated (Ray-Ban / Quest 3 / Muse / Core APIs / ASN)
+
+payload:
+  # ==========================================
+  # 1. 官方品牌主域与新产品 / AI 平台
+  # ==========================================
+  - DOMAIN-SUFFIX,meta.com
+  - DOMAIN-SUFFIX,meta.ai
+  - DOMAIN-SUFFIX,metaai.com
+  - DOMAIN-SUFFIX,atmeta.com
+  - DOMAIN-SUFFIX,imagine.meta.com
+  - DOMAIN-SUFFIX,metademolab.com
+  - DOMAIN-SUFFIX,wit.ai
+  - DOMAIN-SUFFIX,vibes.ai
+
+  # ==========================================
+  # 2. Quest 3 / Horizon / Oculus 专属链路
+  # ==========================================
+  - DOMAIN-SUFFIX,metaquest.com
+  - DOMAIN-SUFFIX,metaqueststore.com
+  - DOMAIN-SUFFIX,oculus.com
+  - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,horizon.world
+  - DOMAIN-SUFFIX,horizonworlds.com
+
+  # ==========================================
+  # 3. Ray-Ban 镜架服务商与硬件生态
+  # ==========================================
+  - DOMAIN-SUFFIX,ray-ban.com
+  - DOMAIN-SUFFIX,luxottica.com
+  - DOMAIN-SUFFIX,luxotticacdn.com
+
+  # ==========================================
+  # 4. 社交基础设施与 CDN 分发
+  # ==========================================
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,facebook.org
+  - DOMAIN-SUFFIX,fb.com
+  - DOMAIN-SUFFIX,fb.me
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,fbsbx.com
+  - DOMAIN-SUFFIX,threads.net
+  - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,messenger.com
+  - DOMAIN-SUFFIX,m.me
+  - DOMAIN-SUFFIX,tfbnw.net
+  - DOMAIN-SUFFIX,mapillary.com
+
+  # ==========================================
+  # 5. 核心接口与 MQTT 长连接通道
+  # ==========================================
+  - DOMAIN,graph.facebook.com
+  - DOMAIN,b-graph.facebook.com
+  - DOMAIN,b-api.facebook.com
+  - DOMAIN,mqtt.facebook.com
+  - DOMAIN,mqtt.c10r.facebook.com
+  - DOMAIN,mqtt-mini.facebook.com
+  - DOMAIN-SUFFIX,fbexternal-a.akamaihd.net
+
+  # ==========================================
+  # 6. 精准特征词 (剔除高误伤词)
+  # ==========================================
+  - DOMAIN-KEYWORD,metaai
+  - DOMAIN-KEYWORD,ar-genai
+  - DOMAIN-KEYWORD,genai
+  - DOMAIN-KEYWORD,whatsapp
+  - DOMAIN-KEYWORD,edge-mqtt
+  - DOMAIN-KEYWORD,rayban
+  - DOMAIN-KEYWORD,wearables
+  - DOMAIN-KEYWORD,muse
+
+  # ==========================================
+  # 7. Meta 全球 ASN 核心网段 (终极防御层)
+  # ==========================================
+  - IP-CIDR,31.13.0.0/16,no-resolve
+  - IP-CIDR,66.220.144.0/20,no-resolve
+  - IP-CIDR,69.171.224.0/19,no-resolve
+  - IP-CIDR,129.134.0.0/17,no-resolve
+  - IP-CIDR,157.240.0.0/16,no-resolve
+  - IP-CIDR,163.70.128.0/17,no-resolve
+  - IP-CIDR,173.252.64.0/18,no-resolve
+  - IP-CIDR,179.60.192.0/22,no-resolve
+  - IP-CIDR,185.60.216.0/22,no-resolve
+  - IP-CIDR,204.15.20.0/22,no-resolve
