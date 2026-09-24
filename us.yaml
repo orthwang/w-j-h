@@ -1,4 +1,4 @@
-# version: 2026-09-23
+# version: 2026-09-24
 # description: US region lock & Comprehensive AI patch (Meta Ecosystem + Copilot Cellular Optimized + Google + Streaming + Microsoft Start Discover)
 # repository: orthwang/w-j-h/us.yaml
 
@@ -38,7 +38,7 @@ payload:
   - DOMAIN-SUFFIX,deepmind.google
 
   # =======================================================
-  # 3. Microsoft Copilot & 移动端高频鉴权与调度链 (防漏流精简版)
+  # 3. Microsoft Copilot & 移动端高频鉴权与调度链 (已剔除 msn.cn)
   # =======================================================
   # --- Copilot 专属入口、会话网关与动态接口 ---
   - DOMAIN-SUFFIX,copilot.microsoft.com
@@ -58,19 +58,30 @@ payload:
   - DOMAIN-SUFFIX,copilot-assets.microsoft.com
   - DOMAIN-SUFFIX,copilot-telemetry.microsoft.com
 
-  # --- Copilot 核心后端与专属 Office CDN ---
+  # --- Copilot Mobile Runtime / ECS / 云凭证漫游 ---
+  - DOMAIN-SUFFIX,svc.cloud.microsoft.com
+  - DOMAIN-SUFFIX,m365.svc.cloud.microsoft.com
+  - DOMAIN-SUFFIX,ecs.office.com
+  - DOMAIN-SUFFIX,titles.prod.mos.microsoft.com
+
+  # --- Office Runtime 与多模态设计支持 ---
+  - DOMAIN-SUFFIX,officeapps.live.com
+  - DOMAIN-SUFFIX,designerapp.officeapps.live.com
+  - DOMAIN-SUFFIX,odc.officeapps.live.com
+  - DOMAIN-SUFFIX,roaming.officeapps.live.com
   - DOMAIN-SUFFIX,substrate.office.com
   - DOMAIN-SUFFIX,office.net
   - DOMAIN-SUFFIX,res.cdn.office.net
   - DOMAIN-SUFFIX,graph.microsoft.com
   - DOMAIN-SUFFIX,graph.office.net
-  - DOMAIN-SUFFIX,odc.officeapps.live.com
-  - DOMAIN-SUFFIX,roaming.officeapps.live.com
   - DOMAIN-SUFFIX,ai.azure.com
 
-  # --- Microsoft Start / MSN / Discover 内容流 (修复卡死关键) ---
+  # --- Realtime Channel 移动端双向长连接通信 ---
+  - DOMAIN-SUFFIX,trouter.skype.com
+  - DOMAIN-SUFFIX,teams.microsoft.com
+
+  # --- Microsoft Start / MSN / Discover 内容流 ---
   - DOMAIN-SUFFIX,msn.com
-  - DOMAIN-SUFFIX,msn.cn
   - DOMAIN-SUFFIX,microsoftstart.com
   - DOMAIN-SUFFIX,edgeassetservice.azureedge.net
   - DOMAIN-SUFFIX,img-s-msn-com.akamaized.net
@@ -131,14 +142,14 @@ payload:
   - DOMAIN-SUFFIX,facebook-internal.com
   - DOMAIN-SUFFIX,facebookvirtualassistant.com
 
-  # --- 独立 AI 实验平台、Horizon 与 Quest 专属独立主域 (补漏) ---
+  # --- 独立 AI 实验平台、Horizon 与 Quest 专属独立主域 ---
   - DOMAIN-SUFFIX,vibes.ai
   - DOMAIN-SUFFIX,metaquest.com
   - DOMAIN-SUFFIX,metaqueststore.com
   - DOMAIN-SUFFIX,horizon.world
   - DOMAIN-SUFFIX,horizonworlds.com
 
-  # --- Ray-Ban Meta 专属生态与镜架服务 (补漏) ---
+  # --- Ray-Ban Meta 专属生态与镜架服务 ---
   - DOMAIN-SUFFIX,ray-ban.com
   - DOMAIN-SUFFIX,luxottica.com
   - DOMAIN-SUFFIX,luxotticacdn.com
@@ -161,7 +172,7 @@ payload:
   - DOMAIN-KEYWORD,rayban
   - DOMAIN-KEYWORD,wearables
 
-  # --- Meta 核心 ASN 全球 IP 聚合网段 (防裸 IP 直连漏判) ---
+  # --- Meta 核心 ASN 全球 IP 聚合网段 ---
   - IP-CIDR,31.13.0.0/16,no-resolve
   - IP-CIDR,66.220.144.0/20,no-resolve
   - IP-CIDR,69.171.224.0/19,no-resolve
@@ -174,7 +185,7 @@ payload:
   - IP-CIDR,204.15.20.0/22,no-resolve
 
   # =======================================================
-  # 5. VPN by Google / Pixel 专属特性底层 (已剔除普通连网检测)
+  # 5. VPN by Google / Pixel 专属特性底层
   # =======================================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-SUFFIX,clientservices.googleapis.com
