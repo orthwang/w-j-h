@@ -32,7 +32,7 @@ payload:
   - DOMAIN-SUFFIX,luxotticacdn.com
 
   # ==========================================
-  # 4. 社交基础设施与 CDN 分发
+  # 4. 社交基础设施、CDN 与广告归因链
   # ==========================================
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,facebook.net
@@ -50,6 +50,7 @@ payload:
   - DOMAIN-SUFFIX,m.me
   - DOMAIN-SUFFIX,tfbnw.net
   - DOMAIN-SUFFIX,mapillary.com
+  - DOMAIN-SUFFIX,atdmt.com
 
   # ==========================================
   # 5. 核心接口与 MQTT 长连接通道
@@ -63,11 +64,10 @@ payload:
   - DOMAIN-SUFFIX,fbexternal-a.akamaihd.net
 
   # ==========================================
-  # 6. 精准特征词 (剔除高误伤词)
+  # 6. 精准特征词 (已剔除泛词 genai，保留低误伤高纯度词)
   # ==========================================
   - DOMAIN-KEYWORD,metaai
   - DOMAIN-KEYWORD,ar-genai
-  - DOMAIN-KEYWORD,genai
   - DOMAIN-KEYWORD,whatsapp
   - DOMAIN-KEYWORD,edge-mqtt
   - DOMAIN-KEYWORD,rayban
