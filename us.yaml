@@ -1,5 +1,5 @@
 # version: 2026-09-24
-# description: US region lock & Comprehensive AI patch (Meta Ecosystem + Copilot Cellular Optimized + Google + Streaming + Microsoft Start Discover)
+# description: US region lock & Comprehensive AI patch (Google + Copilot Cellular Optimized + Streaming + Pixel/VPN)
 # repository: orthwang/w-j-h/us.yaml
 
 payload:
@@ -112,85 +112,7 @@ payload:
   - DOMAIN-SUFFIX,msecnd.net
 
   # =======================================================
-  # 4. Meta 全生态 / AI 实验平台 / Quest 3 / Ray-Ban 完整链
-  # =======================================================
-  # --- 核心主域名与官方资产 ---
-  - DOMAIN-SUFFIX,meta.ai
-  - DOMAIN-SUFFIX,metaai.com
-  - DOMAIN-SUFFIX,wit.ai
-  - DOMAIN-SUFFIX,metademolab.com
-  - DOMAIN-SUFFIX,meta.com
-  - DOMAIN-SUFFIX,atmeta.com
-  - DOMAIN-SUFFIX,imagine.meta.com
-  - DOMAIN-SUFFIX,threads.net
-  - DOMAIN-SUFFIX,fb.com
-  - DOMAIN-SUFFIX,fb.me
-  - DOMAIN-SUFFIX,facebook.com
-  - DOMAIN-SUFFIX,facebook.net
-  - DOMAIN-SUFFIX,facebook.org
-  - DOMAIN-SUFFIX,tfbnw.net
-  - DOMAIN-SUFFIX,fb-messenger.com
-  - DOMAIN-SUFFIX,whatsapp.com
-  - DOMAIN-SUFFIX,whatsapp.net
-  - DOMAIN-SUFFIX,messenger.com
-  - DOMAIN-SUFFIX,m.me
-  - DOMAIN-SUFFIX,fbcdn.net
-  - DOMAIN-SUFFIX,fbsbx.com
-  - DOMAIN-SUFFIX,cdninstagram.com
-  - DOMAIN-SUFFIX,instagram.com
-  - DOMAIN-SUFFIX,oculus.com
-  - DOMAIN-SUFFIX,oculuscdn.com
-  - DOMAIN-SUFFIX,mapillary.com
-  - DOMAIN-SUFFIX,intern.facebook.com
-  - DOMAIN-SUFFIX,facebook.com.edgekey.net
-  - DOMAIN-SUFFIX,fbworkmail.com
-  - DOMAIN-SUFFIX,facebook-internal.com
-  - DOMAIN-SUFFIX,facebookvirtualassistant.com
-
-  # --- 独立 AI 实验平台、Horizon 与 Quest 专属独立主域 ---
-  - DOMAIN-SUFFIX,vibes.ai
-  - DOMAIN-SUFFIX,metaquest.com
-  - DOMAIN-SUFFIX,metaqueststore.com
-  - DOMAIN-SUFFIX,horizon.world
-  - DOMAIN-SUFFIX,horizonworlds.com
-
-  # --- Ray-Ban Meta 专属生态与镜架服务 ---
-  - DOMAIN-SUFFIX,ray-ban.com
-  - DOMAIN-SUFFIX,luxottica.com
-  - DOMAIN-SUFFIX,luxotticacdn.com
-
-  # --- 关键接口与长连接信令通道 ---
-  - DOMAIN,graph.facebook.com
-  - DOMAIN,b-api.facebook.com
-  - DOMAIN,b-graph.facebook.com
-  - DOMAIN,mqtt.facebook.com
-  - DOMAIN,mqtt.c10r.facebook.com
-  - DOMAIN,mqtt-mini.facebook.com
-  - DOMAIN-SUFFIX,fbexternal-a.akamaihd.net
-
-  # --- 特征拦截与动态通道 ---
-  - DOMAIN-KEYWORD,metaai
-  - DOMAIN-KEYWORD,ar-genai
-  - DOMAIN-KEYWORD,genai
-  - DOMAIN-KEYWORD,whatsapp
-  - DOMAIN-KEYWORD,edge-mqtt
-  - DOMAIN-KEYWORD,rayban
-  - DOMAIN-KEYWORD,wearables
-
-  # --- Meta 核心 ASN 全球 IP 聚合网段 ---
-  - IP-CIDR,31.13.0.0/16,no-resolve
-  - IP-CIDR,66.220.144.0/20,no-resolve
-  - IP-CIDR,69.171.224.0/19,no-resolve
-  - IP-CIDR,129.134.0.0/17,no-resolve
-  - IP-CIDR,157.240.0.0/16,no-resolve
-  - IP-CIDR,163.70.128.0/17,no-resolve
-  - IP-CIDR,173.252.64.0/18,no-resolve
-  - IP-CIDR,179.60.192.0/22,no-resolve
-  - IP-CIDR,185.60.216.0/22,no-resolve
-  - IP-CIDR,204.15.20.0/22,no-resolve
-
-  # =======================================================
-  # 5. VPN by Google / Pixel 专属特性底层
+  # 4. VPN by Google / Pixel 专属特性底层
   # =======================================================
   - DOMAIN-SUFFIX,vpn.googleapis.com
   - DOMAIN-SUFFIX,clientservices.googleapis.com
