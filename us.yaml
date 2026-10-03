@@ -1,5 +1,5 @@
-# version: 2026-09-24
-# description: US region lock & Comprehensive AI patch (Google + Copilot Cellular Optimized + Streaming + Pixel/VPN)
+# version: 2026-10-03
+# description: US region lock & Comprehensive AI patch (Google + Copilot Cloud.Microsoft Optimized + Streaming + Pixel/VPN)
 # repository: orthwang/w-j-h/us.yaml
 
 payload:
@@ -43,7 +43,7 @@ payload:
   - DOMAIN-SUFFIX,deepmind.google
 
   # =======================================================
-  # 3. Microsoft Copilot & 移动端高频鉴权与调度链 (已剔除 msn.cn)
+  # 3. Microsoft Copilot & 现代云端微服务链路 (精准闭环)
   # =======================================================
   # --- Copilot 专属入口、会话网关与动态接口 ---
   - DOMAIN-SUFFIX,copilot.microsoft.com
@@ -63,9 +63,9 @@ payload:
   - DOMAIN-SUFFIX,copilot-assets.microsoft.com
   - DOMAIN-SUFFIX,copilot-telemetry.microsoft.com
 
-  # --- Copilot Mobile Runtime / ECS / 云凭证漫游 ---
-  - DOMAIN-SUFFIX,svc.cloud.microsoft.com
-  - DOMAIN-SUFFIX,m365.svc.cloud.microsoft.com
+  # --- Copilot App Runtime / ECS / 云凭证与微服务 (日志精准补齐) ---
+  - DOMAIN-SUFFIX,cloud.microsoft
+  - DOMAIN-SUFFIX,svc.cloud.microsoft
   - DOMAIN-SUFFIX,ecs.office.com
   - DOMAIN-SUFFIX,titles.prod.mos.microsoft.com
 
@@ -81,7 +81,7 @@ payload:
   - DOMAIN-SUFFIX,graph.office.net
   - DOMAIN-SUFFIX,ai.azure.com
 
-  # --- Realtime Channel 移动端双向长连接通信 ---
+  # --- Realtime Channel 双向长连接通道 ---
   - DOMAIN-SUFFIX,trouter.skype.com
   - DOMAIN-SUFFIX,teams.microsoft.com
 
@@ -91,7 +91,7 @@ payload:
   - DOMAIN-SUFFIX,edgeassetservice.azureedge.net
   - DOMAIN-SUFFIX,img-s-msn-com.akamaized.net
 
-  # --- 微软移动端鉴权链路 (OAuth / Entra / Token 刷新) ---
+  # --- 微软移动与桌面端鉴权链路 (OAuth / Entra / Token 刷新) ---
   - DOMAIN-SUFFIX,login.live.com
   - DOMAIN-SUFFIX,login.microsoftonline.com
   - DOMAIN-SUFFIX,account.live.com
