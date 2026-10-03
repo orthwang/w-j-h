@@ -1,5 +1,6 @@
 # repository: orthwang/w-j-h/meta.yaml
 # description: Meta Ecosystem Dedicated (Ray-Ban / Quest 3 / Muse / Core APIs / ASN)
+# updated_at: 2026-10-03
 
 payload:
   # ==========================================
@@ -13,6 +14,8 @@ payload:
   - DOMAIN-SUFFIX,metademolab.com
   - DOMAIN-SUFFIX,wit.ai
   - DOMAIN-SUFFIX,vibes.ai
+  - DOMAIN-SUFFIX,muse.ai
+  - DOMAIN-SUFFIX,llama.com
 
   # ==========================================
   # 2. Quest 3 / Horizon / Oculus 专属链路
@@ -30,6 +33,7 @@ payload:
   - DOMAIN-SUFFIX,ray-ban.com
   - DOMAIN-SUFFIX,luxottica.com
   - DOMAIN-SUFFIX,luxotticacdn.com
+  - DOMAIN-SUFFIX,essilorluxottica.com
 
   # ==========================================
   # 4. 社交基础设施、CDN 与广告归因链
@@ -41,6 +45,7 @@ payload:
   - DOMAIN-SUFFIX,fb.me
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbsbx.com
+  - DOMAIN-SUFFIX,fb.gg
   - DOMAIN-SUFFIX,threads.net
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,cdninstagram.com
@@ -64,7 +69,7 @@ payload:
   - DOMAIN-SUFFIX,fbexternal-a.akamaihd.net
 
   # ==========================================
-  # 6. 精准特征词 (已剔除泛词 genai，保留低误伤高纯度词)
+  # 6. 精准特征词与兜底 (已剔除泛词 genai)
   # ==========================================
   - DOMAIN-KEYWORD,metaai
   - DOMAIN-KEYWORD,ar-genai
@@ -73,9 +78,10 @@ payload:
   - DOMAIN-KEYWORD,rayban
   - DOMAIN-KEYWORD,wearables
   - DOMAIN-KEYWORD,muse
+  - DOMAIN-KEYWORD,oculus
 
   # ==========================================
-  # 7. Meta 全球 ASN 核心网段 (终极防御层)
+  # 7. Meta 全球 ASN 核心网段 (终极防御层 - IPv4 & IPv6)
   # ==========================================
   - IP-CIDR,31.13.0.0/16,no-resolve
   - IP-CIDR,66.220.144.0/20,no-resolve
@@ -87,3 +93,5 @@ payload:
   - IP-CIDR,179.60.192.0/22,no-resolve
   - IP-CIDR,185.60.216.0/22,no-resolve
   - IP-CIDR,204.15.20.0/22,no-resolve
+  - IP-CIDR6,2a03:2880::/32,no-resolve
+  - IP-CIDR6,2620:0:1c00::/40,no-resolve
