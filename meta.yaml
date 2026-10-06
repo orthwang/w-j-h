@@ -1,6 +1,6 @@
+# version: 2026-10-06
+# description: Meta Ecosystem Dedicated (Ray-Ban / Quest 3 / Muse / Core APIs / Hardware / ASN)
 # repository: orthwang/w-j-h/meta.yaml
-# description: Meta Ecosystem Dedicated (Ray-Ban / Quest 3 / Muse / Core APIs / ASN)
-# updated_at: 2026-10-03
 
 payload:
   # ==========================================
@@ -14,16 +14,15 @@ payload:
   - DOMAIN-SUFFIX,metademolab.com
   - DOMAIN-SUFFIX,wit.ai
   - DOMAIN-SUFFIX,vibes.ai
-  - DOMAIN-SUFFIX,muse.ai
-  - DOMAIN-SUFFIX,llama.com
 
   # ==========================================
-  # 2. Quest 3 / Horizon / Oculus 专属链路
+  # 2. Quest 3 / Horizon / Oculus 专属链路与 OTA CDN
   # ==========================================
   - DOMAIN-SUFFIX,metaquest.com
   - DOMAIN-SUFFIX,metaqueststore.com
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,oculus-cdn.com
   - DOMAIN-SUFFIX,horizon.world
   - DOMAIN-SUFFIX,horizonworlds.com
 
@@ -33,19 +32,19 @@ payload:
   - DOMAIN-SUFFIX,ray-ban.com
   - DOMAIN-SUFFIX,luxottica.com
   - DOMAIN-SUFFIX,luxotticacdn.com
-  - DOMAIN-SUFFIX,essilorluxottica.com
 
   # ==========================================
-  # 4. 社交基础设施、CDN 与广告归因链
+  # 4. 社交基础设施、企业协同、硬件凭证与 CDN 归因链
   # ==========================================
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,facebook.net
   - DOMAIN-SUFFIX,facebook.org
+  - DOMAIN-SUFFIX,facebook-hardware.com
+  - DOMAIN-SUFFIX,workplace.com
   - DOMAIN-SUFFIX,fb.com
   - DOMAIN-SUFFIX,fb.me
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbsbx.com
-  - DOMAIN-SUFFIX,fb.gg
   - DOMAIN-SUFFIX,threads.net
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,cdninstagram.com
@@ -63,13 +62,14 @@ payload:
   - DOMAIN,graph.facebook.com
   - DOMAIN,b-graph.facebook.com
   - DOMAIN,b-api.facebook.com
+  - DOMAIN,graph.meta.com
   - DOMAIN,mqtt.facebook.com
   - DOMAIN,mqtt.c10r.facebook.com
   - DOMAIN,mqtt-mini.facebook.com
   - DOMAIN-SUFFIX,fbexternal-a.akamaihd.net
 
   # ==========================================
-  # 6. 精准特征词与兜底 (已剔除泛词 genai)
+  # 6. 精准特征词 (已剔除泛词 genai，保留低误伤高纯度词)
   # ==========================================
   - DOMAIN-KEYWORD,metaai
   - DOMAIN-KEYWORD,ar-genai
@@ -78,11 +78,11 @@ payload:
   - DOMAIN-KEYWORD,rayban
   - DOMAIN-KEYWORD,wearables
   - DOMAIN-KEYWORD,muse
-  - DOMAIN-KEYWORD,oculus
 
   # ==========================================
-  # 7. Meta 全球 ASN 核心网段 (终极防御层 - IPv4 & IPv6)
+  # 7. Meta 全球 ASN 核心网段 (终极防御层：IPv4 + IPv6)
   # ==========================================
+  # --- IPv4 CIDR ---
   - IP-CIDR,31.13.0.0/16,no-resolve
   - IP-CIDR,66.220.144.0/20,no-resolve
   - IP-CIDR,69.171.224.0/19,no-resolve
@@ -93,5 +93,7 @@ payload:
   - IP-CIDR,179.60.192.0/22,no-resolve
   - IP-CIDR,185.60.216.0/22,no-resolve
   - IP-CIDR,204.15.20.0/22,no-resolve
+
+  # --- IPv6 CIDR ---
   - IP-CIDR6,2a03:2880::/32,no-resolve
   - IP-CIDR6,2620:0:1c00::/40,no-resolve
