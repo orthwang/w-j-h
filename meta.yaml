@@ -4,7 +4,7 @@
 
 payload:
   # ==========================================
-  # 1. 官方品牌主域与新产品 / AI 平台 (8条)
+  # 1. 官方品牌主域与新产品 / AI 平台
   # ==========================================
   - DOMAIN-SUFFIX,meta.com
   - DOMAIN-SUFFIX,meta.ai
@@ -16,7 +16,7 @@ payload:
   - DOMAIN-SUFFIX,vibes.ai
 
   # ==========================================
-  # 2. Quest 3 / Horizon / Oculus 专属链路与 OTA CDN (7条)
+  # 2. Quest 3 / Horizon / Oculus 专属链路与 OTA CDN
   # ==========================================
   - DOMAIN-SUFFIX,metaquest.com
   - DOMAIN-SUFFIX,metaqueststore.com
@@ -27,14 +27,14 @@ payload:
   - DOMAIN-SUFFIX,horizonworlds.com
 
   # ==========================================
-  # 3. Ray-Ban 镜架服务商与硬件生态 (3条)
+  # 3. Ray-Ban 镜架服务商与硬件生态
   # ==========================================
   - DOMAIN-SUFFIX,ray-ban.com
   - DOMAIN-SUFFIX,luxottica.com
   - DOMAIN-SUFFIX,luxotticacdn.com
 
   # ==========================================
-  # 4. 社交基础设施、企业协同、硬件凭证与 CDN 归因链 (19条)
+  # 4. 社交基础设施、企业协同、硬件凭证与 CDN 归因链
   # ==========================================
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,facebook.net
@@ -57,19 +57,18 @@ payload:
   - DOMAIN-SUFFIX,atdmt.com
 
   # ==========================================
-  # 5. 核心接口与 MQTT 长连接通道 (8条)
+  # 5. 核心接口与 MQTT 长连接通道
   # ==========================================
   - DOMAIN,graph.facebook.com
   - DOMAIN,b-graph.facebook.com
   - DOMAIN,b-api.facebook.com
-  - DOMAIN,graph.meta.com
   - DOMAIN,mqtt.facebook.com
   - DOMAIN,mqtt.c10r.facebook.com
   - DOMAIN,mqtt-mini.facebook.com
   - DOMAIN-SUFFIX,fbexternal-a.akamaihd.net
 
   # ==========================================
-  # 6. 精准特征词 (已剔除泛词 genai，保留低误伤高纯度词) (7条)
+  # 6. 精准特征词 (已剔除泛词 genai，保留低误伤高纯度词)
   # ==========================================
   - DOMAIN-KEYWORD,metaai
   - DOMAIN-KEYWORD,ar-genai
@@ -80,9 +79,9 @@ payload:
   - DOMAIN-KEYWORD,muse
 
   # ==========================================
-  # 7. Meta 全球 ASN 核心网段 (终极防御层：IPv4 + IPv6) (12条)
+  # 7. Meta 全球 ASN 核心网段 (终极防御层：IPv4 + IPv6)
   # ==========================================
-  # --- IPv4 CIDR (10条) ---
+  # --- IPv4 CIDR ---
   - IP-CIDR,31.13.0.0/16,no-resolve
   - IP-CIDR,66.220.144.0/20,no-resolve
   - IP-CIDR,69.171.224.0/19,no-resolve
@@ -94,6 +93,6 @@ payload:
   - IP-CIDR,185.60.216.0/22,no-resolve
   - IP-CIDR,204.15.20.0/22,no-resolve
 
-  # --- IPv6 CIDR (2条) ---
+  # --- IPv6 CIDR ---
   - IP-CIDR6,2a03:2880::/32,no-resolve
   - IP-CIDR6,2620:0:1c00::/40,no-resolve
