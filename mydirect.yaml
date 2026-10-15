@@ -15,6 +15,20 @@ payload:
   - DOMAIN-KEYWORD,hohai 
   - DOMAIN-KEYWORD,dandanplay
 
+  # =======================================================
+  # 证书状态校验 (OCSP / CRL) 精确直连
+  # =======================================================
+  - DOMAIN,ocsp.digicert.com
+  - DOMAIN,crl.comodoca.com
+  - DOMAIN,ocsp.comodoca.com
+
+  # =======================================================
+  # 罗技驱动更新与华硕 AP 已确认 AWS IoT 端点直连
+  # =======================================================
+  - DOMAIN,updates.optionsplus.logitechg.com
+  - DOMAIN,updates.logitech.com
+  - DOMAIN,a18cff4083x5ph-ats.iot.us-west-2.amazonaws.com
+
   
   #- DOMAIN-KEYWORD,lilyemby
   #- DOMAIN-KEYWORD,mobaiemby
