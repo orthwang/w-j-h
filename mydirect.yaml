@@ -29,6 +29,9 @@ payload:
   - DOMAIN,updates.logitech.com
   - DOMAIN,a18cff4083x5ph-ats.iot.us-west-2.amazonaws.com
 
+  - DOMAIN-SUFFIX,lencr.org
+  - DOMAIN-SUFFIX,digicert.com
+
   
   #- DOMAIN-KEYWORD,lilyemby
   #- DOMAIN-KEYWORD,mobaiemby
