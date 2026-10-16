@@ -29,6 +29,7 @@ payload:
   - DOMAIN,updates.logitech.com
   - DOMAIN,a18cff4083x5ph-ats.iot.us-west-2.amazonaws.com
 
+  # 证书吊销检查 (OCSP / CRL) 全局直连 (加速浏览器与系统服务首次 TLS 握手)
   - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,digicert.com
 
