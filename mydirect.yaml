@@ -21,6 +21,9 @@ payload:
   - DOMAIN,ocsp.digicert.com
   - DOMAIN,crl.comodoca.com
   - DOMAIN,ocsp.comodoca.com
+  # 新增
+  - DOMAIN-SUFFIX,lencr.org
+  - DOMAIN-SUFFIX,digicert.com
 
   # =======================================================
   # 罗技驱动更新与华硕 AP 已确认 AWS IoT 端点直连
