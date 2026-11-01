@@ -16,12 +16,18 @@ payload:
   - DOMAIN-KEYWORD,dandanplay
 
   # =======================================================
-  # 证书状态校验 (OCSP / CRL) 精确直连
+  # 兄弟打印机 (Brother) 官方服务与驱动下载直连
+  # =======================================================
+  - DOMAIN-SUFFIX,brother.com
+  - DOMAIN-SUFFIX,brother.cn
+  - DOMAIN-SUFFIX,95105369.com
+
+  # =======================================================
+  # 证书状态校验 (OCSP / CRL) 精确直连 (加速 TLS 握手)
   # =======================================================
   - DOMAIN,ocsp.digicert.com
   - DOMAIN,crl.comodoca.com
   - DOMAIN,ocsp.comodoca.com
-  # 新增
   - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,digicert.com
 
@@ -31,11 +37,6 @@ payload:
   - DOMAIN,updates.optionsplus.logitechg.com
   - DOMAIN,updates.logitech.com
   - DOMAIN,a18cff4083x5ph-ats.iot.us-west-2.amazonaws.com
-
-  # 证书吊销检查 (OCSP / CRL) 全局直连 (加速浏览器与系统服务首次 TLS 握手)
-  - DOMAIN-SUFFIX,lencr.org
-  - DOMAIN-SUFFIX,digicert.com
-
   
   #- DOMAIN-KEYWORD,lilyemby
   #- DOMAIN-KEYWORD,mobaiemby
