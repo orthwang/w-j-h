@@ -1,6 +1,6 @@
 #!/bin/bash
 # =========================================================
-# RFC VPS 生产级极简初始化脚本
+# RFC VPS 生产级极简初始化脚本 (Debian 13 适配版)
 # =========================================================
 
 set -e
@@ -8,7 +8,7 @@ set -e
 echo ">>> [1/4] 系统更新与必备工具安装..."
 export DEBIAN_FRONTEND=noninteractive
 apt update && apt upgrade -y
-apt install -y curl wget git vim sudo htop
+apt install -y curl wget git vim sudo htop systemd-timesyncd
 
 echo ">>> [2/4] 设置系统主机名为 rfc..."
 hostnamectl set-hostname rfc
@@ -29,5 +29,6 @@ echo "========================================="
 echo "✅ 初始化完成！"
 echo "当前主机名: $(hostname)"
 echo "当前时区: $(timedatectl | grep 'Time zone' | awk '{print $3}')"
+echo "NTP 状态: $(timedatectl | grep 'NTP service' | awk '{print $3}')"
 echo "TCP 拥塞算法: $(sysctl -n net.ipv4.tcp_congestion_control)"
 echo "========================================="
